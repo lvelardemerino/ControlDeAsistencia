@@ -1,0 +1,409 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1F7A7616-05E7-4AFF-B298-771FF5809585}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>ControlDeAsistencia.My.MyApplication</StartupObject>
+    <RootNamespace>ControlDeAsistencia</RootNamespace>
+    <AssemblyName>ControlDeAsistencia</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>ControlDeAsistencia.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>ControlDeAsistencia.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Maranatha-Logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="C1.Win.C1FlexGrid.4, Version=4.6.20133.796, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL" />
+    <Reference Include="DPFPCtlXTypeLibNET, Version=1.6.1.0, Culture=neutral, PublicKeyToken=c0c98f712d5392a7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>C:\Program Files\DigitalPersona\One Touch SDK\.NET\Bin\DPFPCtlXTypeLibNET.dll</HintPath>
+    </Reference>
+    <Reference Include="DPFPCtlXWrapperNET, Version=1.6.1.0, Culture=neutral, PublicKeyToken=c0c98f712d5392a7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\DigitalPersona\One Touch SDK\.NET\Bin\DPFPCtlXWrapperNET.dll</HintPath>
+    </Reference>
+    <Reference Include="DPFPDevNET, Version=1.6.1.0, Culture=neutral, PublicKeyToken=696774c42ee28c57, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\DigitalPersona\One Touch SDK\.NET\Bin\DPFPDevNET.dll</HintPath>
+    </Reference>
+    <Reference Include="DPFPEngNET, Version=1.6.1.0, Culture=neutral, PublicKeyToken=7fe76e7adf19964b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\DigitalPersona\One Touch SDK\.NET\Bin\DPFPEngNET.dll</HintPath>
+    </Reference>
+    <Reference Include="DPFPGuiNET, Version=1.6.1.0, Culture=neutral, PublicKeyToken=d4f4a0bd9c559145, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\DigitalPersona\One Touch SDK\.NET\Bin\DPFPGuiNET.dll</HintPath>
+    </Reference>
+    <Reference Include="DPFPShrNET, Version=1.6.1.0, Culture=neutral, PublicKeyToken=d902fe275a8d6cf2, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\DigitalPersona\One Touch SDK\.NET\Bin\DPFPShrNET.dll</HintPath>
+    </Reference>
+    <Reference Include="DPFPShrXTypeLibNET, Version=1.6.1.0, Culture=neutral, PublicKeyToken=c0c98f712d5392a7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>C:\Program Files\DigitalPersona\One Touch SDK\.NET\Bin\DPFPShrXTypeLibNET.dll</HintPath>
+    </Reference>
+    <Reference Include="DPFPVerNET, Version=1.6.1.0, Culture=neutral, PublicKeyToken=4de0a9c4dcc83984, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\DigitalPersona\One Touch SDK\.NET\Bin\DPFPVerNET.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\MySQL dll\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Funciones\Conexion.vb" />
+    <Compile Include="Funciones\Funciones.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Vistas\Catalogos\frmArea.Designer.vb">
+      <DependentUpon>frmArea.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Catalogos\frmArea.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Catalogos\frmAreaMod.Designer.vb">
+      <DependentUpon>frmAreaMod.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Catalogos\frmAreaMod.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Catalogos\frmDepartamentos.Designer.vb">
+      <DependentUpon>frmDepartamentos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Catalogos\frmDepartamentos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Catalogos\frmDepartamentosMod.Designer.vb">
+      <DependentUpon>frmDepartamentosMod.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Catalogos\frmDepartamentosMod.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Catalogos\frmSucursales.Designer.vb">
+      <DependentUpon>frmSucursales.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Catalogos\frmSucursales.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Catalogos\frmSucursalesMod.Designer.vb">
+      <DependentUpon>frmSucursalesMod.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Catalogos\frmSucursalesMod.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Catalogos\frmUsuarios.Designer.vb">
+      <DependentUpon>frmUsuarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Catalogos\frmUsuarios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Catalogos\frmUsuariosMod.Designer.vb">
+      <DependentUpon>frmUsuariosMod.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Catalogos\frmUsuariosMod.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Checador\frmCambioDescanso.Designer.vb">
+      <DependentUpon>frmCambioDescanso.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Checador\frmCambioDescanso.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Checador\frmDiaFestivo.Designer.vb">
+      <DependentUpon>frmDiaFestivo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Checador\frmDiaFestivo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Checador\frmEmpleados.Designer.vb">
+      <DependentUpon>frmEmpleados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Checador\frmEmpleados.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Checador\frmEmpleadosMod.Designer.vb">
+      <DependentUpon>frmEmpleadosMod.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Checador\frmEmpleadosMod.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Checador\frmErrores.Designer.vb">
+      <DependentUpon>frmErrores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Checador\frmErrores.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Checador\frmFalta.Designer.vb">
+      <DependentUpon>frmFalta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Checador\frmFalta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Checador\frmJornadaEmpleado.Designer.vb">
+      <DependentUpon>frmJornadaEmpleado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Checador\frmJornadaEmpleado.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Checador\frmModificarDia.Designer.vb">
+      <DependentUpon>frmModificarDia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Checador\frmModificarDia.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Checador\frmPermiso.Designer.vb">
+      <DependentUpon>frmPermiso.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Checador\frmPermiso.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Checador\frmPermisoPersonal.Designer.vb">
+      <DependentUpon>frmPermisoPersonal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Checador\frmPermisoPersonal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Checador\frmPlantilla.Designer.vb">
+      <DependentUpon>frmPlantilla.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Checador\frmPlantilla.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Checador\frmPlantillaMod.Designer.vb">
+      <DependentUpon>frmPlantillaMod.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Checador\frmPlantillaMod.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Checador\frmTiempo.Designer.vb">
+      <DependentUpon>frmTiempo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Checador\frmTiempo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Checador\frmVacaciones.Designer.vb">
+      <DependentUpon>frmVacaciones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Checador\frmVacaciones.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Checador\Reportes\frmAsistencia.Designer.vb">
+      <DependentUpon>frmAsistencia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Checador\Reportes\frmAsistencia.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Otros\frmCargandoPermisos.Designer.vb">
+      <DependentUpon>frmCargandoPermisos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Otros\frmCargandoPermisos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Otros\frmLogin.Designer.vb">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Otros\frmLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Otros\frmSelSucursal.Designer.vb">
+      <DependentUpon>frmSelSucursal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Otros\frmSelSucursal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Catalogos\frmArea.resx">
+      <DependentUpon>frmArea.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Catalogos\frmAreaMod.resx">
+      <DependentUpon>frmAreaMod.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Catalogos\frmDepartamentos.resx">
+      <DependentUpon>frmDepartamentos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Catalogos\frmDepartamentosMod.resx">
+      <DependentUpon>frmDepartamentosMod.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Catalogos\frmSucursales.resx">
+      <DependentUpon>frmSucursales.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Catalogos\frmSucursalesMod.resx">
+      <DependentUpon>frmSucursalesMod.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Catalogos\frmUsuarios.resx">
+      <DependentUpon>frmUsuarios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Catalogos\frmUsuariosMod.resx">
+      <DependentUpon>frmUsuariosMod.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Checador\frmCambioDescanso.resx">
+      <DependentUpon>frmCambioDescanso.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Checador\frmDiaFestivo.resx">
+      <DependentUpon>frmDiaFestivo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Checador\frmEmpleados.resx">
+      <DependentUpon>frmEmpleados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Checador\frmEmpleadosMod.resx">
+      <DependentUpon>frmEmpleadosMod.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Checador\frmErrores.resx">
+      <DependentUpon>frmErrores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Checador\frmFalta.resx">
+      <DependentUpon>frmFalta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Checador\frmJornadaEmpleado.resx">
+      <DependentUpon>frmJornadaEmpleado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Checador\frmModificarDia.resx">
+      <DependentUpon>frmModificarDia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Checador\frmPermiso.resx">
+      <DependentUpon>frmPermiso.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Checador\frmPermisoPersonal.resx">
+      <DependentUpon>frmPermisoPersonal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Checador\frmPlantilla.resx">
+      <DependentUpon>frmPlantilla.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Checador\frmPlantillaMod.resx">
+      <DependentUpon>frmPlantillaMod.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Checador\frmTiempo.resx">
+      <DependentUpon>frmTiempo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Checador\frmVacaciones.resx">
+      <DependentUpon>frmVacaciones.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Checador\Reportes\frmAsistencia.resx">
+      <DependentUpon>frmAsistencia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Otros\frmCargandoPermisos.resx">
+      <DependentUpon>frmCargandoPermisos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Otros\frmLogin.resx">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Otros\frmSelSucursal.resx">
+      <DependentUpon>frmSelSucursal.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Maranatha-Logo.ico" />
+    <None Include="Resources\cache_32x32-32.ico" />
+    <None Include="Resources\fondo.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

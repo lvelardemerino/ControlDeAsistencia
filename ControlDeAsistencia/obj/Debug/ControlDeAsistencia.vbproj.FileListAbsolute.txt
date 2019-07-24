@@ -1,0 +1,46 @@
+D:\Documentos\Visual Studio 2012\Projects\ControlDeAsistencia\ControlDeAsistencia\bin\Debug\ControlDeAsistencia.exe
+D:\Documentos\Visual Studio 2012\Projects\ControlDeAsistencia\ControlDeAsistencia\bin\Debug\ControlDeAsistencia.pdb
+D:\Documentos\Visual Studio 2012\Projects\ControlDeAsistencia\ControlDeAsistencia\bin\Debug\ControlDeAsistencia.xml
+D:\Documentos\Visual Studio 2012\Projects\ControlDeAsistencia\ControlDeAsistencia\bin\Debug\C1.Win.C1FlexGrid.4.dll
+D:\Documentos\Visual Studio 2012\Projects\ControlDeAsistencia\ControlDeAsistencia\bin\Debug\MySql.Data.dll
+D:\Documentos\Visual Studio 2012\Projects\ControlDeAsistencia\ControlDeAsistencia\bin\Debug\C1.Win.C1FlexGrid.4.xml
+D:\Documentos\Visual Studio 2012\Projects\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmMdi.resources
+D:\Documentos\Visual Studio 2012\Projects\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.Resources.resources
+D:\Documentos\Visual Studio 2012\Projects\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmArea.resources
+D:\Documentos\Visual Studio 2012\Projects\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmAreaMod.resources
+D:\Documentos\Visual Studio 2012\Projects\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmDepartamentos.resources
+D:\Documentos\Visual Studio 2012\Projects\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmDepartamentosMod.resources
+D:\Documentos\Visual Studio 2012\Projects\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmSucursales.resources
+D:\Documentos\Visual Studio 2012\Projects\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmSucursalesMod.resources
+D:\Documentos\Visual Studio 2012\Projects\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmUsuarios.resources
+D:\Documentos\Visual Studio 2012\Projects\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmUsuariosMod.resources
+D:\Documentos\Visual Studio 2012\Projects\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmCambioDescanso.resources
+D:\Documentos\Visual Studio 2012\Projects\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmDiaFestivo.resources
+D:\Documentos\Visual Studio 2012\Projects\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmEmpleados.resources
+D:\Documentos\Visual Studio 2012\Projects\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmEmpleadosMod.resources
+D:\Documentos\Visual Studio 2012\Projects\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmFalta.resources
+D:\Documentos\Visual Studio 2012\Projects\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmJornadaEmpleado.resources
+D:\Documentos\Visual Studio 2012\Projects\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmModificarDia.resources
+D:\Documentos\Visual Studio 2012\Projects\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmPermiso.resources
+D:\Documentos\Visual Studio 2012\Projects\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmPermisoPersonal.resources
+D:\Documentos\Visual Studio 2012\Projects\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmPlantilla.resources
+D:\Documentos\Visual Studio 2012\Projects\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmPlantillaMod.resources
+D:\Documentos\Visual Studio 2012\Projects\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmTiempo.resources
+D:\Documentos\Visual Studio 2012\Projects\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmVacaciones.resources
+D:\Documentos\Visual Studio 2012\Projects\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmAsistencia.resources
+D:\Documentos\Visual Studio 2012\Projects\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmCargandoPermisos.resources
+D:\Documentos\Visual Studio 2012\Projects\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmLogin.resources
+D:\Documentos\Visual Studio 2012\Projects\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmSelSucursal.resources
+D:\Documentos\Visual Studio 2012\Projects\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.vbproj.GenerateResource.Cache
+D:\Documentos\Visual Studio 2012\Projects\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.exe.licenses
+D:\Documentos\Visual Studio 2012\Projects\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.exe
+D:\Documentos\Visual Studio 2012\Projects\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.xml
+D:\Documentos\Visual Studio 2012\Projects\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.pdb
+D:\Documentos\Visual Studio 2012\Projects\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.vbprojResolveAssemblyReference.cache
+D:\Documentos\Visual Studio 2012\Projects\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmErrores.resources
+C:\Users\Luis Alberto\Documents\Visual Studio 2012\Projects\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.exe
+C:\Users\Luis Alberto\Documents\Visual Studio 2012\Projects\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.xml
+C:\Users\Luis Alberto\Documents\Visual Studio 2012\Projects\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.pdb
+C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.exe
+C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.xml
+C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.pdb
