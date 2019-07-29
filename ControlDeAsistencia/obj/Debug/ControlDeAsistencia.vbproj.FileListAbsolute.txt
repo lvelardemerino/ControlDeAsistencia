@@ -41,51 +41,6 @@ D:\Documentos\Visual Studio 2012\Projects\ControlDeAsistencia\ControlDeAsistenci
 C:\Users\Luis Alberto\Documents\Visual Studio 2012\Projects\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.exe
 C:\Users\Luis Alberto\Documents\Visual Studio 2012\Projects\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.xml
 C:\Users\Luis Alberto\Documents\Visual Studio 2012\Projects\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.pdb
-C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.exe
-C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.xml
-C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.pdb
-C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\bin\Debug\ControlDeAsistencia.exe
-C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\bin\Debug\ControlDeAsistencia.pdb
-C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\bin\Debug\ControlDeAsistencia.xml
-C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\bin\Debug\C1.Win.C1FlexGrid.4.dll
-C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\bin\Debug\DPFPCtlXWrapperNET.dll
-C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\bin\Debug\DPFPDevNET.dll
-C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\bin\Debug\DPFPEngNET.dll
-C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\bin\Debug\DPFPGuiNET.dll
-C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\bin\Debug\DPFPShrNET.dll
-C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\bin\Debug\DPFPVerNET.dll
-C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\bin\Debug\C1.Win.C1FlexGrid.4.xml
-C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.vbprojResolveAssemblyReference.cache
-C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmMdi.resources
-C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.Resources.resources
-C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmArea.resources
-C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmAreaMod.resources
-C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmDepartamentos.resources
-C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmDepartamentosMod.resources
-C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmSucursales.resources
-C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmSucursalesMod.resources
-C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmUsuarios.resources
-C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmUsuariosMod.resources
-C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmCambioDescanso.resources
-C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmDiaFestivo.resources
-C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmEmpleados.resources
-C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmEmpleadosMod.resources
-C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmErrores.resources
-C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmFalta.resources
-C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmJornadaEmpleado.resources
-C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmModificarDia.resources
-C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmPermiso.resources
-C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmPermisoPersonal.resources
-C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmPlantilla.resources
-C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmPlantillaMod.resources
-C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmTiempo.resources
-C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmVacaciones.resources
-C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmAsistencia.resources
-C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmCargandoPermisos.resources
-C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmLogin.resources
-C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmSelSucursal.resources
-C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.vbproj.GenerateResource.Cache
-C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.exe.licenses
 C:\Users\LuisAlberto\Source\Repos\ControldeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.exe
 C:\Users\LuisAlberto\Source\Repos\ControldeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.xml
 C:\Users\LuisAlberto\Source\Repos\ControldeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.pdb
@@ -131,4 +86,49 @@ C:\Users\LuisAlberto\Source\Repos\ControldeAsistencia\ControlDeAsistencia\obj\De
 C:\Users\LuisAlberto\Source\Repos\ControldeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmSelSucursal.resources
 C:\Users\LuisAlberto\Source\Repos\ControldeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.vbproj.GenerateResource.Cache
 C:\Users\LuisAlberto\Source\Repos\ControldeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.exe.licenses
+C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\bin\Debug\ControlDeAsistencia.exe
+C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\bin\Debug\ControlDeAsistencia.pdb
+C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\bin\Debug\ControlDeAsistencia.xml
+C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\bin\Debug\C1.Win.C1FlexGrid.4.dll
+C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\bin\Debug\DPFPCtlXWrapperNET.dll
+C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\bin\Debug\DPFPDevNET.dll
+C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\bin\Debug\DPFPEngNET.dll
+C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\bin\Debug\DPFPGuiNET.dll
+C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\bin\Debug\DPFPShrNET.dll
+C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\bin\Debug\DPFPVerNET.dll
+C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\bin\Debug\C1.Win.C1FlexGrid.4.xml
+C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmMdi.resources
+C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.Resources.resources
+C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmArea.resources
+C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmAreaMod.resources
+C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmDepartamentos.resources
+C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmDepartamentosMod.resources
+C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmSucursales.resources
+C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmSucursalesMod.resources
+C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmUsuarios.resources
+C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmUsuariosMod.resources
+C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmCambioDescanso.resources
+C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmDiaFestivo.resources
+C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmEliminaIncidencia.resources
+C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmEmpleados.resources
+C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmEmpleadosMod.resources
+C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmErrores.resources
+C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmFalta.resources
+C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmJornadaEmpleado.resources
+C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmModificarDia.resources
 C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmModJornada.resources
+C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmPermiso.resources
+C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmPermisoPersonal.resources
+C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmPlantilla.resources
+C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmPlantillaMod.resources
+C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmTiempo.resources
+C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmVacaciones.resources
+C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmAsistencia.resources
+C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmCargandoPermisos.resources
+C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmLogin.resources
+C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmSelSucursal.resources
+C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.vbproj.GenerateResource.Cache
+C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.exe.licenses
+C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.exe
+C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.xml
+C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.pdb

@@ -195,6 +195,12 @@
     <Compile Include="Vistas\Checador\frmDiaFestivo.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Vistas\Checador\frmEliminaIncidencia.Designer.vb">
+      <DependentUpon>frmEliminaIncidencia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Checador\frmEliminaIncidencia.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Vistas\Checador\frmEmpleados.Designer.vb">
       <DependentUpon>frmEmpleados.vb</DependentUpon>
     </Compile>
@@ -338,6 +344,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Checador\frmDiaFestivo.resx">
       <DependentUpon>frmDiaFestivo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Checador\frmEliminaIncidencia.resx">
+      <DependentUpon>frmEliminaIncidencia.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Checador\frmEmpleados.resx">
       <DependentUpon>frmEmpleados.vb</DependentUpon>

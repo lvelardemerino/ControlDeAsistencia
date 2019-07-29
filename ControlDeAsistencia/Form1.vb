@@ -556,6 +556,22 @@ Public Class frmMdi
 
     End Sub
 
+    Private Sub tsmiJornadaModificar_Click(sender As Object, e As EventArgs) Handles tsmiJornadaModificar.Click
+
+        Dim frmModJornada = New frmModJornada()
+        frmModJornada.MdiParent = Me
+        frmModJornada.Show()
+
+    End Sub
+
+    Private Sub tsmiEliminaIncidencia_Click(sender As Object, e As EventArgs) Handles tsmiEliminaIncidencia.Click
+
+        Dim frmEliminaIncidencia = New frmEliminaIncidencia()
+        frmEliminaIncidencia.MdiParent = Me
+        frmEliminaIncidencia.Show()
+
+    End Sub
+
 #End Region
 
 End Class

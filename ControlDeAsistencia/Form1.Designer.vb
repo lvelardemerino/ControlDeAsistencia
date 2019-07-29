@@ -46,6 +46,7 @@ Partial Class frmMdi
         Me.tsmiTiempoEmpleado = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiReportes = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiReportesAsistencia = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiRevisarErrores = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiCatalogos = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiCatalogosSucursales = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiCatalogosArea = New System.Windows.Forms.ToolStripMenuItem()
@@ -55,11 +56,13 @@ Partial Class frmMdi
         Me.tmrVentanaOficinas = New System.Windows.Forms.Timer(Me.components)
         Me.bgwActualizar = New System.ComponentModel.BackgroundWorker()
         Me.tmrHora = New System.Windows.Forms.Timer(Me.components)
-        Me.tsmiRevisarErrores = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiEliminaIncidencia = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsMenuInf = New System.Windows.Forms.ToolStrip()
         Me.tslHora = New System.Windows.Forms.ToolStripLabel()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.tslActualizando = New System.Windows.Forms.ToolStripLabel()
+        Me.tslVersion = New System.Windows.Forms.ToolStripLabel()
+        Me.tslVer = New System.Windows.Forms.ToolStripLabel()
         Me.tsMenu.SuspendLayout()
         Me.tsMenuInf.SuspendLayout()
         Me.SuspendLayout()
@@ -85,7 +88,7 @@ Partial Class frmMdi
         '
         Me.tsmiEmpleados.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiEmpleadosAltas, Me.tsmiEmpleadosBajas})
         Me.tsmiEmpleados.Name = "tsmiEmpleados"
-        Me.tsmiEmpleados.Size = New System.Drawing.Size(187, 22)
+        Me.tsmiEmpleados.Size = New System.Drawing.Size(186, 22)
         Me.tsmiEmpleados.Text = "Empleados"
         '
         'tsmiEmpleadosAltas
@@ -104,7 +107,7 @@ Partial Class frmMdi
         '
         Me.tsmiJornada.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PlantillaToolStripMenuItem, Me.tsmiJornadaEmpleado, Me.tsmiJornadaRevisar, Me.tsmiJornadaModificar, Me.tsmiJornadaActualizar})
         Me.tsmiJornada.Name = "tsmiJornada"
-        Me.tsmiJornada.Size = New System.Drawing.Size(187, 22)
+        Me.tsmiJornada.Size = New System.Drawing.Size(186, 22)
         Me.tsmiJornada.Tag = "20"
         Me.tsmiJornada.Text = "Jornada"
         '
@@ -145,15 +148,15 @@ Partial Class frmMdi
         'tsmiModificarDia
         '
         Me.tsmiModificarDia.Name = "tsmiModificarDia"
-        Me.tsmiModificarDia.Size = New System.Drawing.Size(187, 22)
+        Me.tsmiModificarDia.Size = New System.Drawing.Size(186, 22)
         Me.tsmiModificarDia.Tag = "30"
         Me.tsmiModificarDia.Text = "Modificar Dia"
         '
         'tsmiAutorizar
         '
-        Me.tsmiAutorizar.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiAutorizarPermiso, Me.tsmiAutorizarFalta, Me.tsmiPermisoPersonal, Me.tsmiCambioDescanso})
+        Me.tsmiAutorizar.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiAutorizarPermiso, Me.tsmiAutorizarFalta, Me.tsmiPermisoPersonal, Me.tsmiCambioDescanso, Me.tsmiEliminaIncidencia})
         Me.tsmiAutorizar.Name = "tsmiAutorizar"
-        Me.tsmiAutorizar.Size = New System.Drawing.Size(187, 22)
+        Me.tsmiAutorizar.Size = New System.Drawing.Size(186, 22)
         Me.tsmiAutorizar.Tag = "40"
         Me.tsmiAutorizar.Text = "Autorizar"
         '
@@ -184,20 +187,20 @@ Partial Class frmMdi
         'tsmiVacaciones
         '
         Me.tsmiVacaciones.Name = "tsmiVacaciones"
-        Me.tsmiVacaciones.Size = New System.Drawing.Size(187, 22)
+        Me.tsmiVacaciones.Size = New System.Drawing.Size(186, 22)
         Me.tsmiVacaciones.Tag = "50"
         Me.tsmiVacaciones.Text = "Vacaciones"
         '
         'tsmiDiasFestivos
         '
         Me.tsmiDiasFestivos.Name = "tsmiDiasFestivos"
-        Me.tsmiDiasFestivos.Size = New System.Drawing.Size(187, 22)
+        Me.tsmiDiasFestivos.Size = New System.Drawing.Size(186, 22)
         Me.tsmiDiasFestivos.Text = "Dias Festivos"
         '
         'tsmiTiempoEmpleado
         '
         Me.tsmiTiempoEmpleado.Name = "tsmiTiempoEmpleado"
-        Me.tsmiTiempoEmpleado.Size = New System.Drawing.Size(187, 22)
+        Me.tsmiTiempoEmpleado.Size = New System.Drawing.Size(186, 22)
         Me.tsmiTiempoEmpleado.Tag = "60"
         Me.tsmiTiempoEmpleado.Text = "Tiempo de Empleado"
         '
@@ -205,7 +208,7 @@ Partial Class frmMdi
         '
         Me.tsmiReportes.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiReportesAsistencia})
         Me.tsmiReportes.Name = "tsmiReportes"
-        Me.tsmiReportes.Size = New System.Drawing.Size(187, 22)
+        Me.tsmiReportes.Size = New System.Drawing.Size(186, 22)
         Me.tsmiReportes.Tag = "70"
         Me.tsmiReportes.Text = "Reportes"
         '
@@ -214,6 +217,12 @@ Partial Class frmMdi
         Me.tsmiReportesAsistencia.Name = "tsmiReportesAsistencia"
         Me.tsmiReportesAsistencia.Size = New System.Drawing.Size(127, 22)
         Me.tsmiReportesAsistencia.Text = "Asistencia"
+        '
+        'tsmiRevisarErrores
+        '
+        Me.tsmiRevisarErrores.Name = "tsmiRevisarErrores"
+        Me.tsmiRevisarErrores.Size = New System.Drawing.Size(186, 22)
+        Me.tsmiRevisarErrores.Text = "Revisar Errores"
         '
         'tsmiCatalogos
         '
@@ -254,17 +263,17 @@ Partial Class frmMdi
         Me.tmrHora.Enabled = True
         Me.tmrHora.Interval = 1000
         '
-        'tsmiRevisarErrores
+        'tsmiEliminaIncidencia
         '
-        Me.tsmiRevisarErrores.Name = "tsmiRevisarErrores"
-        Me.tsmiRevisarErrores.Size = New System.Drawing.Size(187, 22)
-        Me.tsmiRevisarErrores.Text = "Revisar Errores"
+        Me.tsmiEliminaIncidencia.Name = "tsmiEliminaIncidencia"
+        Me.tsmiEliminaIncidencia.Size = New System.Drawing.Size(185, 22)
+        Me.tsmiEliminaIncidencia.Text = "Elimina Incidencia"
         '
         'tsMenuInf
         '
         Me.tsMenuInf.BackgroundImage = CType(resources.GetObject("tsMenuInf.BackgroundImage"), System.Drawing.Image)
         Me.tsMenuInf.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.tsMenuInf.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tslHora, Me.ToolStripSeparator1, Me.tslActualizando})
+        Me.tsMenuInf.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tslHora, Me.ToolStripSeparator1, Me.tslActualizando, Me.tslVer, Me.tslVersion})
         Me.tsMenuInf.Location = New System.Drawing.Point(0, 494)
         Me.tsMenuInf.Name = "tsMenuInf"
         Me.tsMenuInf.Size = New System.Drawing.Size(780, 25)
@@ -275,7 +284,7 @@ Partial Class frmMdi
         '
         Me.tslHora.ForeColor = System.Drawing.Color.White
         Me.tslHora.Name = "tslHora"
-        Me.tslHora.Size = New System.Drawing.Size(88, 22)
+        Me.tslHora.Size = New System.Drawing.Size(87, 22)
         Me.tslHora.Text = "ToolStripLabel1"
         '
         'ToolStripSeparator1
@@ -291,6 +300,24 @@ Partial Class frmMdi
         Me.tslActualizando.Size = New System.Drawing.Size(16, 22)
         Me.tslActualizando.Text = "ToolStripLabel1"
         Me.tslActualizando.Visible = False
+        '
+        'tslVersion
+        '
+        Me.tslVersion.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.tslVersion.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tslVersion.ForeColor = System.Drawing.Color.White
+        Me.tslVersion.Name = "tslVersion"
+        Me.tslVersion.Size = New System.Drawing.Size(32, 22)
+        Me.tslVersion.Text = "Ver."
+        '
+        'tslVer
+        '
+        Me.tslVer.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.tslVer.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tslVer.ForeColor = System.Drawing.Color.White
+        Me.tslVer.Name = "tslVer"
+        Me.tslVer.Size = New System.Drawing.Size(37, 22)
+        Me.tslVer.Text = "1.0.0"
         '
         'frmMdi
         '
@@ -349,5 +376,7 @@ Partial Class frmMdi
     Friend WithEvents ToolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents tslActualizando As System.Windows.Forms.ToolStripLabel
     Friend WithEvents tsmiRevisarErrores As System.Windows.Forms.ToolStripMenuItem
-
+    Friend WithEvents tsmiEliminaIncidencia As ToolStripMenuItem
+    Friend WithEvents tslVer As ToolStripLabel
+    Friend WithEvents tslVersion As ToolStripLabel
 End Class
