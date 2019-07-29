@@ -114,9 +114,13 @@ Public Class frmModificarDia
         fgHorarios.Cols(1).Caption = "Empleado"
         fgHorarios.Cols(2).Caption = "Fecha"
         fgHorarios.Cols(3).Caption = "Entrada"
+        fgHorarios.Cols(3).DataType = GetType(String)
         fgHorarios.Cols(4).Caption = "Salida a Comer"
+        fgHorarios.Cols(4).DataType = GetType(String)
         fgHorarios.Cols(5).Caption = "Entrada de Comer"
+        fgHorarios.Cols(5).DataType = GetType(String)
         fgHorarios.Cols(6).Caption = "Salida"
+        fgHorarios.Cols(6).DataType = GetType(String)
 
         fgHorarios.Cols(1).Width = 200
         fgHorarios.Cols(2).Width = 70
