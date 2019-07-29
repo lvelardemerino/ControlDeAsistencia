@@ -216,7 +216,11 @@ Public Class frmAsistencia
 
                         fgJornada.SetData(fgJornada.Rows.Count - 1, 5, "")
                     Else
-                        fgJornada.SetData(fgJornada.Rows.Count - 1, 5, rdrObj(1).ToString)
+
+                        If rdrObj(1).ToString <> "00:00:00" Then
+                            fgJornada.SetData(fgJornada.Rows.Count - 1, 5, rdrObj(1).ToString)
+                        End If
+
                     End If
 
                     'Registro del Regreso de Comida
@@ -228,7 +232,11 @@ Public Class frmAsistencia
 
                         fgJornada.SetData(fgJornada.Rows.Count - 1, 6, "")
                     Else
-                        fgJornada.SetData(fgJornada.Rows.Count - 1, 6, rdrObj(2).ToString)
+
+                        If rdrObj(2).ToString <> "00:00:00" Then
+                            fgJornada.SetData(fgJornada.Rows.Count - 1, 6, rdrObj(2).ToString)
+                        End If
+
                     End If
 
                     'Registro de la Salida del Colaborador de la Sucursal
@@ -240,9 +248,11 @@ Public Class frmAsistencia
 
                         fgJornada.SetData(fgJornada.Rows.Count - 1, 7, "")
                     Else
-                        fgJornada.SetData(fgJornada.Rows.Count - 1, 7, rdrObj(3).ToString)
-                    End If
+                        If rdrObj(3).ToString <> "00:00:00" Then
+                            fgJornada.SetData(fgJornada.Rows.Count - 1, 7, rdrObj(3).ToString)
+                        End If
 
+                    End If
 
                 End While
 
@@ -875,6 +885,7 @@ Public Class frmAsistencia
                                     difTiempoContra += TiempoTemp
 
                                 Else
+
                                     Dim Tiempo As DateTime
                                     Tiempo = rdrObj(2).ToString
                                     TiempoTemp = DateDiff("n", fgJornada.GetData(i, 8), Tiempo)
@@ -892,6 +903,10 @@ Public Class frmAsistencia
 
                                 TotFaltas += 1
 
+                            Case Else
+
+
+
                         End Select
 
                     End While
@@ -902,51 +917,53 @@ Public Class frmAsistencia
 
                     If fgJornada.GetData(i, 3) <> "" And fgJornada.GetData(i, 8) <> "" Then
 
-                        TiempoTemp = DateDiff("n", fgJornada.GetData(i, 3), fgJornada.GetData(i, 4))
+                        'Diferencia de tiempo en la entrada
+                        If fgJornada.GetData(i, 3) <> "" And fgJornada.GetData(i, 4) <> "" Then
 
-                        If TiempoTemp > 0 Then
-                            difTiempoContra += TiempoTemp
-                            numRetardos += 1
+                            TiempoTemp = DateDiff("n", fgJornada.GetData(i, 3), fgJornada.GetData(i, 4))
+
+                            If TiempoTemp > 0 Then
+
+                                Dim crRegistro As New C1.Win.C1FlexGrid.CellRange
+                                crRegistro = fgJornada.GetCellRange(i, 4)
+                                crRegistro.Style = fgJornada.Styles("CustomStyle5")
+                                fgJornada.SetData(i, 10, TiempoTemp)
+
+                                difTiempoContra += TiempoTemp
+
+                                numRetardos += 1
+
+                            End If
+
                         End If
 
-                        If fgJornada.GetData(i, 7) <> "" And fgJornada.GetData(i, 7) <> "00:00:00" Then
+                        If fgJornada.GetData(i, 7) <> "" And fgJornada.GetData(i, 8) <> "" Then
 
                             TiempoTemp = DateDiff("n", fgJornada.GetData(i, 7), fgJornada.GetData(i, 8))
 
-                        End If
-                        
-
-
                             If TiempoTemp > 0 Then
+
+                                Dim crRegistro As New C1.Win.C1FlexGrid.CellRange
+                                crRegistro = fgJornada.GetCellRange(i, 7)
+                                crRegistro.Style = fgJornada.Styles("CustomStyle5")
+                                fgJornada.SetData(i, 13, TiempoTemp)
+
                                 difTiempoContra += TiempoTemp
+
                             End If
 
                         End If
 
                     End If
 
-                    rdrObj.Close()
+                End If
+
+                rdrObj.Close()
 
                     TotTiempoFavor += difTiempoFavor
                     TotTiempoContra += difTiempoContra
 
                     rdrObj.Close()
-
-                'If difTiempoFavor > 0 Then
-                '    Dim crRegistro As New C1.Win.C1FlexGrid.CellRange
-                '    crRegistro = fgJornada.GetCellRange(i, 10)
-                '    crRegistro.Style = fgJornada.Styles("CustomStyle4")
-                '    fgJornada.SetData(i, 10, difTiempoFavor)
-                'End If
-
-                'If difTiempoContra > 0 Then
-
-                '    Dim crRegistro As New C1.Win.C1FlexGrid.CellRange
-                '    crRegistro = fgJornada.GetCellRange(i, 11)
-                '    crRegistro.Style = fgJornada.Styles("CustomStyle5")
-                '    fgJornada.SetData(i, 11, difTiempoContra)
-
-                'End If
 
             End If
 

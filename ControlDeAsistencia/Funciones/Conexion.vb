@@ -7,10 +7,10 @@ Module Conexion
         Dim cn As New MySqlConnection
 
         ' Base Local
-        cn.ConnectionString = "Server=192.168.2.248;DataBase=checador;User Id=sistemas;Password=s1st3m@s2017"
+        'cn.ConnectionString = "Server=192.168.2.248;DataBase=checador;User Id=sistemas;Password=s1st3m@s2017"
 
         'Base Pruebas
-        'cn.ConnectionString = "Server=LocalHost;DataBase=checador;User Id=sistemas;Password=s1st3m@s2017"
+        cn.ConnectionString = "Server=LocalHost;DataBase=checador;User Id=sistemas;Password=s1st3m@s2017"
 
         Try
 

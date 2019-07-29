@@ -131,3 +131,4 @@ C:\Users\LuisAlberto\Source\Repos\ControldeAsistencia\ControlDeAsistencia\obj\De
 C:\Users\LuisAlberto\Source\Repos\ControldeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmSelSucursal.resources
 C:\Users\LuisAlberto\Source\Repos\ControldeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.vbproj.GenerateResource.Cache
 C:\Users\LuisAlberto\Source\Repos\ControldeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.exe.licenses
+C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmModJornada.resources

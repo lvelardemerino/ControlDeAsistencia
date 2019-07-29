@@ -2,7 +2,13 @@
 
 Public Class frmMdi
 
+#Region "VARIABLES FORMULARIO"
+
     Dim actualiza As Integer = 0
+
+#End Region
+
+#Region "FORMULARIO"
 
     Private Sub frmMdi_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -59,6 +65,8 @@ Public Class frmMdi
         dtEventos.Clear()
 
     End Sub
+
+#End Region
 
 #Region "FUNCIONES"
 

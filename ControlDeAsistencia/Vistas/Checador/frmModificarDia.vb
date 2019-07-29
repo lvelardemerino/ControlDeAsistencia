@@ -62,10 +62,10 @@ Public Class frmModificarDia
             fgHorarios.SetData(fgHorarios.Rows.Count - 1, 0, rdrObj.Item("clave"))
             fgHorarios.SetData(fgHorarios.Rows.Count - 1, 1, cmbEmpleado.Text)
             fgHorarios.SetData(fgHorarios.Rows.Count - 1, 2, rdrObj.Item("fecha"))
-            fgHorarios.SetData(fgHorarios.Rows.Count - 1, 3, rdrObj.Item("reg_entrada"))
-            fgHorarios.SetData(fgHorarios.Rows.Count - 1, 4, rdrObj.Item("reg_sal_comida"))
-            fgHorarios.SetData(fgHorarios.Rows.Count - 1, 5, rdrObj.Item("reg_ent_comida"))
-            fgHorarios.SetData(fgHorarios.Rows.Count - 1, 6, rdrObj.Item("reg_salida"))
+            fgHorarios.SetData(fgHorarios.Rows.Count - 1, 3, rdrObj(2).ToString)
+            fgHorarios.SetData(fgHorarios.Rows.Count - 1, 4, rdrObj(3).ToString)
+            fgHorarios.SetData(fgHorarios.Rows.Count - 1, 5, rdrObj(4).ToString)
+            fgHorarios.SetData(fgHorarios.Rows.Count - 1, 6, rdrObj(5).ToString)
 
         End While
 
@@ -209,7 +209,7 @@ Public Class frmModificarDia
                 End If
 
                 If fgHorarios.GetData(i, 6) <> "" Then
-                    strSql += "reg_salida = '" & fgHorarios.GetData(i, 6) & "', "
+                    strSql += "reg_salida = '" & fgHorarios.GetData(i, 6) & "' "
                 End If
 
 
