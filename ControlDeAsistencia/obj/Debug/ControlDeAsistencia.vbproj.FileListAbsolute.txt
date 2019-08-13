@@ -97,6 +97,7 @@ C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\bin\D
 C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\bin\Debug\DPFPShrNET.dll
 C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\bin\Debug\DPFPVerNET.dll
 C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\bin\Debug\C1.Win.C1FlexGrid.4.xml
+C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.vbprojResolveAssemblyReference.cache
 C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmMdi.resources
 C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.Resources.resources
 C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmArea.resources

@@ -32,7 +32,7 @@ Public Class frmMdi
     Private Sub tmrHora_Tick(sender As Object, e As EventArgs) Handles tmrHora.Tick
 
         If actualiza = 300 Then
-            'If actualiza = 300 Then
+
             tslHora.Text = Date.Now.ToLongTimeString
 
             If Not bgwActualizar.IsBusy Then
@@ -41,11 +41,9 @@ Public Class frmMdi
 
             actualiza = 0
 
-
         Else
 
             tslHora.Text = Date.Now.ToLongTimeString
-            actualiza += 1
 
         End If
 
@@ -55,7 +53,6 @@ Public Class frmMdi
 
         tslActualizando.Visible = True
         EnviaEventos()
-        RecibeEventos()
 
     End Sub
 

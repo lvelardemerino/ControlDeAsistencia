@@ -483,8 +483,6 @@ Public Class frmEmpleadosMod
 
         strSql += "0 )"
 
-
-
         cmdObj.CommandText = strSql
 
         Try

@@ -25,122 +25,131 @@ Module Funciones
 
 #Region "FUNCIONES"
 
-    Public Sub Eventos(ByVal idEmp As Integer, ByVal Fec As String, ByVal evento As String, ByVal query As String)
+    'Public Sub Eventos(ByVal idEmp As Integer, ByVal Fec As String, ByVal evento As String, ByVal query As String)
 
-        Dim Nom As String
-        Dim cnObj As New MySqlConnection
-        cnObj = conectar()
+    '    Dim Nom As String = ""
 
-        Dim cmdObj As New MySqlCommand
-        cmdObj.Connection = cnObj
+    '    Dim cnObj As New MySqlConnection
+    '    cnObj = conectar()
 
-        Dim strSql As String
+    '    Dim cmdObj As New MySqlCommand
+    '    cmdObj.Connection = cnObj
 
-        strSql = "SELECT "
-        strSql += "a_paterno, "
-        strSql += "a_materno, "
-        strSql += "nombre "
-        strSql += "FROM "
-        strSql += "empleado "
-        strSql += "WHERE "
-        strSql += "id_empleado = '" & idEmp & "'"
+    '    Dim strSql As String
 
-        cmdObj.CommandText = strSql
-        Dim rdrObj As MySqlDataReader
-        rdrObj = cmdObj.ExecuteReader
+    '    strSql = "SELECT "
+    '    strSql += "a_paterno, "
+    '    strSql += "a_materno, "
+    '    strSql += "nombre "
+    '    strSql += "FROM "
+    '    strSql += "empleado "
+    '    strSql += "WHERE "
+    '    strSql += "id_empleado = '" & idEmp & "'"
 
-        While rdrObj.Read
+    '    cmdObj.CommandText = strSql
+    '    Dim rdrObj As MySqlDataReader
+    '    rdrObj = cmdObj.ExecuteReader
 
-            Nom = rdrObj.Item("nombre") & " " & rdrObj.Item("a_paterno") & " " & rdrObj.Item("a_materno")
+    '    While rdrObj.Read
 
-        End While
+    '        Nom = rdrObj.Item("nombre") & " " & rdrObj.Item("a_paterno") & " " & rdrObj.Item("a_materno")
 
-        rdrObj.Close()
+    '    End While
 
-        strSql = "INSERT "
-        strSql += "INTO "
-        strSql += "eventos "
-        strSql += "(id_sucursal, "
-        strSql += "evento, "
-        strSql += "query, "
-        strSql += "fecha, "
-        strSql += "id_empleado, "
-        strSql += "empleado, "
-        strSql += "bol, "
-        strSql += "maq, "
-        strSql += "sat, "
-        strSql += "izt, "
-        strSql += "ags) "
-        strSql += "VALUES "
-        strSql += "('" & intSucursal & "', "
-        strSql += "'" & evento & "', "
-        strSql += "'" & query & "', "
-        strSql += "'" & Fec & "', "
-        strSql += "'" & idEmp & "', "
-        strSql += "'" & Nom & "', "
+    '    rdrObj.Close()
 
-        Select Case intSucursal
+    '    strSql = "INSERT "
+    '    strSql += "INTO "
+    '    strSql += "eventos "
+    '    strSql += "(id_sucursal, "
+    '    strSql += "evento, "
+    '    strSql += "query, "
+    '    strSql += "fecha, "
+    '    strSql += "id_empleado, "
+    '    strSql += "empleado, "
+    '    strSql += "bol, "
+    '    strSql += "maq, "
+    '    strSql += "sat, "
+    '    strSql += "izt, "
+    '    strSql += "ags) "
+    '    strSql += "VALUES "
+    '    strSql += "('" & intSucursal & "', "
+    '    strSql += "'" & evento & "', "
+    '    strSql += "'" & query & "', "
+    '    strSql += "'" & Fec & "', "
+    '    strSql += "'" & idEmp & "', "
+    '    strSql += "'" & Nom & "', "
 
-
-            Case 1
-                'Bolivar
-
-                strSql += "0, "
-                strSql += "1, "
-                strSql += "1, "
-                strSql += "1, "
-                strSql += "1)"
+    '    Select Case intSucursal
 
 
-            Case 2
-                'Miguel Angel
+    '        Case 1
+    '            'Bolivar
 
-                strSql += "1, "
-                strSql += "0, "
-                strSql += "1, "
-                strSql += "1, "
-                strSql += "1)"
+    '            strSql += "0, "
+    '            strSql += "1, "
+    '            strSql += "1, "
+    '            strSql += "1, "
+    '            strSql += "1)"
 
-            Case 3
-                'Iztapalapa
 
-                strSql += "1, "
-                strSql += "1, "
-                strSql += "1, "
-                strSql += "0, "
-                strSql += "1)"
+    '        Case 2
+    '            'Miguel Angel
 
-            Case 4
-                'Satelite
+    '            strSql += "1, "
+    '            strSql += "0, "
+    '            strSql += "1, "
+    '            strSql += "1, "
+    '            strSql += "1)"
 
-                strSql += "1, "
-                strSql += "1, "
-                strSql += "0, "
-                strSql += "1, "
-                strSql += "1)"
+    '        Case 3
+    '            'Iztapalapa
 
-            Case 5
-                'Aguascalientes
+    '            strSql += "1, "
+    '            strSql += "1, "
+    '            strSql += "1, "
+    '            strSql += "0, "
+    '            strSql += "1)"
 
-                strSql += "1, "
-                strSql += "1, "
-                strSql += "1, "
-                strSql += "1, "
-                strSql += "0)"
+    '        Case 4
+    '            'Satelite
 
-        End Select
+    '            strSql += "1, "
+    '            strSql += "1, "
+    '            strSql += "0, "
+    '            strSql += "1, "
+    '            strSql += "1)"
 
-        cmdObj.CommandText = strSql
+    '        Case 5
+    '            'Aguascalientes
 
-        Try
-            cmdObj.ExecuteNonQuery()
-        Catch ex As Exception
-            MessageBox.Show("Error al Generar el Evento, " & evento & ": " & ex.Message, "ERROR CRITICO", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
+    '            strSql += "1, "
+    '            strSql += "1, "
+    '            strSql += "1, "
+    '            strSql += "1, "
+    '            strSql += "0)"
 
-        cnObj.Close()
+    '        Case Else
 
-    End Sub
+    '            strSql += "1, "
+    '            strSql += "1, "
+    '            strSql += "1, "
+    '            strSql += "1, "
+    '            strSql += "0)"
+
+    '    End Select
+
+    '    cmdObj.CommandText = strSql
+
+    '    Try
+    '        cmdObj.ExecuteNonQuery()
+    '    Catch ex As Exception
+    '        MessageBox.Show("Error al Generar el Evento, " & evento & ": " & ex.Message, "ERROR CRITICO", MessageBoxButtons.OK, MessageBoxIcon.Error)
+    '    End Try
+
+    '    cnObj.Close()
+
+    'End Sub
 
     Public Function OficinasUsuario() As DataSet
 

@@ -492,8 +492,13 @@ Public Class frmAsistencia
 
             While rdrObj.Read
 
-                fgJornada.SetData(i, 3, rdrObj(0).ToString)
-                fgJornada.SetData(i, 8, rdrObj(1).ToString)
+                If rdrObj(0).ToString <> "00:00:00" Then
+                    fgJornada.SetData(i, 3, rdrObj(0).ToString)
+                End If
+
+                If rdrObj(1).ToString <> "00:00:00" Then
+                    fgJornada.SetData(i, 8, rdrObj(1).ToString)
+                End If
 
             End While
 
@@ -802,11 +807,12 @@ Public Class frmAsistencia
                                     Dim crRegistro As New C1.Win.C1FlexGrid.CellRange
                                     crRegistro = fgJornada.GetCellRange(i, 11)
                                     crRegistro.Style = fgJornada.Styles("CustomStyle4")
-                                    fgJornada.SetData(i, 11, TiempoTemp)
+                                    fgJornada.SetData(i, 11, ConvierteNumeroHora(TiempoTemp))
 
                                     difTiempoFavor += TiempoTemp
 
                                 Else
+
                                     Dim Tiempo As DateTime
                                     Tiempo = rdrObj(1).ToString
                                     TiempoTemp = DateDiff("n", Tiempo, fgJornada.GetData(i, 3))
@@ -814,7 +820,7 @@ Public Class frmAsistencia
                                     Dim crRegistro As New C1.Win.C1FlexGrid.CellRange
                                     crRegistro = fgJornada.GetCellRange(i, 11)
                                     crRegistro.Style = fgJornada.Styles("CustomStyle4")
-                                    fgJornada.SetData(i, 11, TiempoTemp)
+                                    fgJornada.SetData(i, 11, ConvierteNumeroHora(TiempoTemp))
 
                                     difTiempoFavor += TiempoTemp
 
@@ -828,7 +834,7 @@ Public Class frmAsistencia
                                     Dim crRegistro As New C1.Win.C1FlexGrid.CellRange
                                     crRegistro = fgJornada.GetCellRange(i, 12)
                                     crRegistro.Style = fgJornada.Styles("CustomStyle4")
-                                    fgJornada.SetData(i, 12, TiempoTemp)
+                                    fgJornada.SetData(i, 12, ConvierteNumeroHora(TiempoTemp))
 
                                     difTiempoFavor += TiempoTemp
 
@@ -840,7 +846,7 @@ Public Class frmAsistencia
                                     Dim crRegistro As New C1.Win.C1FlexGrid.CellRange
                                     crRegistro = fgJornada.GetCellRange(i, 12)
                                     crRegistro.Style = fgJornada.Styles("CustomStyle4")
-                                    fgJornada.SetData(i, 12, TiempoTemp)
+                                    fgJornada.SetData(i, 12, ConvierteNumeroHora(TiempoTemp))
 
                                     difTiempoFavor += TiempoTemp
 
@@ -854,7 +860,7 @@ Public Class frmAsistencia
                                     Dim crRegistro As New C1.Win.C1FlexGrid.CellRange
                                     crRegistro = fgJornada.GetCellRange(i, 10)
                                     crRegistro.Style = fgJornada.Styles("CustomStyle5")
-                                    fgJornada.SetData(i, 10, TiempoTemp)
+                                    fgJornada.SetData(i, 10, ConvierteNumeroHora(TiempoTemp))
 
                                     difTiempoContra += TiempoTemp
 
@@ -866,7 +872,7 @@ Public Class frmAsistencia
                                     Dim crRegistro As New C1.Win.C1FlexGrid.CellRange
                                     crRegistro = fgJornada.GetCellRange(i, 10)
                                     crRegistro.Style = fgJornada.Styles("CustomStyle5")
-                                    fgJornada.SetData(i, 10, TiempoTemp)
+                                    fgJornada.SetData(i, 10, ConvierteNumeroHora(TiempoTemp))
 
                                     difTiempoContra += TiempoTemp
 
@@ -880,7 +886,7 @@ Public Class frmAsistencia
                                     Dim crRegistro As New C1.Win.C1FlexGrid.CellRange
                                     crRegistro = fgJornada.GetCellRange(i, 13)
                                     crRegistro.Style = fgJornada.Styles("CustomStyle5")
-                                    fgJornada.SetData(i, 13, TiempoTemp)
+                                    fgJornada.SetData(i, 13, ConvierteNumeroHora(TiempoTemp))
 
                                     difTiempoContra += TiempoTemp
 
@@ -893,7 +899,7 @@ Public Class frmAsistencia
                                     Dim crRegistro As New C1.Win.C1FlexGrid.CellRange
                                     crRegistro = fgJornada.GetCellRange(i, 13)
                                     crRegistro.Style = fgJornada.Styles("CustomStyle5")
-                                    fgJornada.SetData(i, 13, TiempoTemp)
+                                    fgJornada.SetData(i, 13, ConvierteNumeroHora(TiempoTemp))
 
                                     difTiempoContra += TiempoTemp
 
@@ -927,7 +933,7 @@ Public Class frmAsistencia
                                 Dim crRegistro As New C1.Win.C1FlexGrid.CellRange
                                 crRegistro = fgJornada.GetCellRange(i, 4)
                                 crRegistro.Style = fgJornada.Styles("CustomStyle5")
-                                fgJornada.SetData(i, 10, TiempoTemp)
+                                fgJornada.SetData(i, 10, ConvierteNumeroHora(TiempoTemp))
 
                                 difTiempoContra += TiempoTemp
 
@@ -946,7 +952,7 @@ Public Class frmAsistencia
                                 Dim crRegistro As New C1.Win.C1FlexGrid.CellRange
                                 crRegistro = fgJornada.GetCellRange(i, 7)
                                 crRegistro.Style = fgJornada.Styles("CustomStyle5")
-                                fgJornada.SetData(i, 13, TiempoTemp)
+                                fgJornada.SetData(i, 13, ConvierteNumeroHora(TiempoTemp))
 
                                 difTiempoContra += TiempoTemp
 
@@ -994,7 +1000,7 @@ Public Class frmAsistencia
         End If
 
         If numRetardos > 0 Then
-            lblRetardos.Text = ConvierteNumeroHora(numRetardos)
+            lblRetardos.Text = numRetardos
             lblRetardos.Visible = True
         Else
             lblRetardos.Text = ""
