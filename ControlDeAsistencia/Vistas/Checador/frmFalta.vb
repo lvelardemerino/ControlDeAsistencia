@@ -57,6 +57,52 @@ Public Class frmFalta
 
     Private Sub Guardar()
 
+        If Valida(cmbEmpleado.SelectedValue, Format(dtpFecha.Value, "yyyyMMdd")) = False Then
+
+            Dim cnObj As New MySqlConnection
+            cnObj = conectar()
+
+            Dim cmdObj As New MySqlCommand
+            cmdObj.Connection = cnObj
+
+            Dim strSql As String
+
+            strSql = "INSERT "
+            strSql += "INTO "
+            strSql += "incidencias "
+            strSql += "(tipo, "
+            strSql += "clave, "
+            strSql += "fecha, "
+            strSql += "observaciones, "
+            strSql += "falta) "
+            strSql += "VALUES "
+            strSql += "('FALTA', "
+            strSql += "'" & cmbEmpleado.SelectedValue & "', "
+            strSql += "'" & Format(dtpFecha.Value, "yyyyMMdd") & "', "
+            strSql += "'" & txtObservaciones.Text & "', "
+            strSql += "1)"
+
+            cmdObj.CommandText = strSql
+
+            Try
+                cmdObj.ExecuteNonQuery()
+                MessageBox.Show("Datos Guardados", "MENSAJE", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                cnObj.Close()
+                Me.Close()
+            Catch ex As Exception
+                MessageBox.Show("Error al Guardar, " + ex.Message, "ERROR CRITICO", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+
+            cnObj.Close()
+
+        End If
+
+    End Sub
+
+    Private Function Valida(ByVal clave As Integer, ByVal fecha As String) As Boolean
+
+        Dim Valor As Boolean = False
+
         Dim cnObj As New MySqlConnection
         cnObj = conectar()
 
@@ -65,35 +111,31 @@ Public Class frmFalta
 
         Dim strSql As String
 
-        strSql = "INSERT "
-        strSql += "INTO "
+        strSql = "SELECT "
+        strSql += "* "
+        strSql += "FROM "
         strSql += "incidencias "
-        strSql += "(tipo, "
-        strSql += "clave, "
-        strSql += "fecha, "
-        strSql += "observaciones, "
-        strSql += "falta) "
-        strSql += "VALUES "
-        strSql += "('FALTA', "
-        strSql += "'" & cmbEmpleado.SelectedValue & "', "
-        strSql += "'" & Format(dtpFecha.Value, "yyyyMMdd") & "', "
-        strSql += "'" & txtObservaciones.Text & "', "
-        strSql += "1)"
+        strSql += "WHERE "
+        strSql += "clave = '" & clave & "' AND "
+        strSql += "fecha = '" & fecha & "' AND "
+        strSql += "tipo = 'FALTA'"
 
         cmdObj.CommandText = strSql
+        Dim rdrObj As MySqlDataReader
+        rdrObj = cmdObj.ExecuteReader
 
-        Try
-            cmdObj.ExecuteNonQuery()
-            MessageBox.Show("Datos Guardados", "MENSAJE", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            cnObj.Close()
-            Me.Close()
-        Catch ex As Exception
-            MessageBox.Show("Error al Guardar, " + ex.Message, "ERROR CRITICO", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
+        If rdrObj.HasRows = True Then
+            Valor = True
+        Else
+            Valor = False
+        End If
 
+        Return Valor
+
+        rdrObj.Close()
         cnObj.Close()
 
-    End Sub
+    End Function
 
 #End Region
 

@@ -37,255 +37,268 @@ Public Class frmPermiso
 
             Case "ENTRADA TEMPRANO"
 
-                If txtHora.Text <> "" Then
+                If Valida(cmbEmpleado.SelectedValue, Format(dtpFecha.Value, "yyyyMMdd"), "ENTRADA TEMPRANO") = False Then
 
-                    strSql = "INSERT "
-                    strSql += "INTO "
-                    strSql += "incidencias "
-                    strSql += "(tipo, "
-                    strSql += "clave, "
-                    strSql += "fecha, "
-                    strSql += "observaciones, "
-                    strSql += "entrada) "
-                    strSql += "VALUES "
-                    strSql += "('" & cmbConcepto.Text & "', "
-                    strSql += "'" & cmbEmpleado.SelectedValue & "', "
-                    strSql += "'" & Format(dtpFecha.Value, "yyyyMMdd") & "', "
-                    strSql += "'" & txtObservaciones.Text & "', "
-                    strSql += "'" & txtHora.Text & "')"
+                    If txtHora.Text <> "" Then
 
-                    cmdObj.CommandText = strSql
+                        strSql = "INSERT "
+                        strSql += "INTO "
+                        strSql += "incidencias "
+                        strSql += "(tipo, "
+                        strSql += "clave, "
+                        strSql += "fecha, "
+                        strSql += "observaciones, "
+                        strSql += "entrada) "
+                        strSql += "VALUES "
+                        strSql += "('" & cmbConcepto.Text & "', "
+                        strSql += "'" & cmbEmpleado.SelectedValue & "', "
+                        strSql += "'" & Format(dtpFecha.Value, "yyyyMMdd") & "', "
+                        strSql += "'" & txtObservaciones.Text & "', "
+                        strSql += "'" & txtHora.Text & "')"
 
-                    Try
-                        cmdObj.ExecuteNonQuery()
-                        MessageBox.Show("Datos Guardados", "MENSAJE", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        cmdObj.CommandText = strSql
+
+                        Try
+                            cmdObj.ExecuteNonQuery()
+                            MessageBox.Show("Datos Guardados", "MENSAJE", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            cnObj.Close()
+                            Me.Close()
+                        Catch ex As Exception
+                            MessageBox.Show("Error al Guardar, " + ex.Message, "ERROR CRITICO", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        End Try
+
                         cnObj.Close()
-                        Me.Close()
-                    Catch ex As Exception
-                        MessageBox.Show("Error al Guardar, " + ex.Message, "ERROR CRITICO", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                    End Try
 
-                    cnObj.Close()
+                    Else
 
-                Else
+                        strSql = "INSERT "
+                        strSql += "INTO "
+                        strSql += "incidencias "
+                        strSql += "(tipo, "
+                        strSql += "clave, "
+                        strSql += "fecha, "
+                        strSql += "observaciones) "
+                        strSql += "VALUES "
+                        strSql += "('" & cmbConcepto.Text & "', "
+                        strSql += "'" & cmbEmpleado.SelectedValue & "', "
+                        strSql += "'" & Format(dtpFecha.Value, "yyyyMMdd") & "', "
+                        strSql += "'" & txtObservaciones.Text & "')"
 
-                    strSql = "INSERT "
-                    strSql += "INTO "
-                    strSql += "incidencias "
-                    strSql += "(tipo, "
-                    strSql += "clave, "
-                    strSql += "fecha, "
-                    strSql += "observaciones) "
-                    strSql += "VALUES "
-                    strSql += "('" & cmbConcepto.Text & "', "
-                    strSql += "'" & cmbEmpleado.SelectedValue & "', "
-                    strSql += "'" & Format(dtpFecha.Value, "yyyyMMdd") & "', "
-                    strSql += "'" & txtObservaciones.Text & "')"
+                        cmdObj.CommandText = strSql
 
-                    cmdObj.CommandText = strSql
+                        Try
+                            cmdObj.ExecuteNonQuery()
+                            MessageBox.Show("Datos Guardados", "MENSAJE", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            cnObj.Close()
+                            Me.Close()
+                        Catch ex As Exception
+                            MessageBox.Show("Error al Guardar, " + ex.Message, "ERROR CRITICO", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        End Try
 
-                    Try
-                        cmdObj.ExecuteNonQuery()
-                        MessageBox.Show("Datos Guardados", "MENSAJE", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         cnObj.Close()
-                        Me.Close()
-                    Catch ex As Exception
-                        MessageBox.Show("Error al Guardar, " + ex.Message, "ERROR CRITICO", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                    End Try
 
-                    cnObj.Close()
+                    End If
 
                 End If
-               
 
             Case "ENTRADA TARDE"
 
-                If txtHora.Text <> "" Then
+                If Valida(cmbEmpleado.SelectedValue, Format(dtpFecha.Value, "yyyyMMdd"), "ENTRADA TARDE") = False Then
 
-                    strSql = "INSERT "
-                    strSql += "INTO "
-                    strSql += "incidencias "
-                    strSql += "(tipo, "
-                    strSql += "clave, "
-                    strSql += "fecha, "
-                    strSql += "observaciones, "
-                    strSql += "entrada) "
-                    strSql += "VALUES "
-                    strSql += "('" & cmbConcepto.Text & "', "
-                    strSql += "'" & cmbEmpleado.SelectedValue & "', "
-                    strSql += "'" & Format(dtpFecha.Value, "yyyyMMdd") & "', "
-                    strSql += "'" & txtObservaciones.Text & "', "
-                    strSql += "'" & txtHora.Text & "')"
 
-                    cmdObj.CommandText = strSql
+                    If txtHora.Text <> "" Then
 
-                    Try
-                        cmdObj.ExecuteNonQuery()
-                        MessageBox.Show("Datos Guardados", "MENSAJE", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        strSql = "INSERT "
+                        strSql += "INTO "
+                        strSql += "incidencias "
+                        strSql += "(tipo, "
+                        strSql += "clave, "
+                        strSql += "fecha, "
+                        strSql += "observaciones, "
+                        strSql += "entrada) "
+                        strSql += "VALUES "
+                        strSql += "('" & cmbConcepto.Text & "', "
+                        strSql += "'" & cmbEmpleado.SelectedValue & "', "
+                        strSql += "'" & Format(dtpFecha.Value, "yyyyMMdd") & "', "
+                        strSql += "'" & txtObservaciones.Text & "', "
+                        strSql += "'" & txtHora.Text & "')"
+
+                        cmdObj.CommandText = strSql
+
+                        Try
+                            cmdObj.ExecuteNonQuery()
+                            MessageBox.Show("Datos Guardados", "MENSAJE", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            cnObj.Close()
+                            Me.Close()
+                        Catch ex As Exception
+                            MessageBox.Show("Error al Guardar, " + ex.Message, "ERROR CRITICO", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        End Try
+
                         cnObj.Close()
-                        Me.Close()
-                    Catch ex As Exception
-                        MessageBox.Show("Error al Guardar, " + ex.Message, "ERROR CRITICO", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                    End Try
 
-                    cnObj.Close()
+                    Else
 
-                Else
+                        strSql = "INSERT "
+                        strSql += "INTO "
+                        strSql += "incidencias "
+                        strSql += "(tipo, "
+                        strSql += "clave, "
+                        strSql += "fecha, "
+                        strSql += "observaciones) "
+                        strSql += "VALUES "
+                        strSql += "('" & cmbConcepto.Text & "', "
+                        strSql += "'" & cmbEmpleado.SelectedValue & "', "
+                        strSql += "'" & Format(dtpFecha.Value, "yyyyMMdd") & "', "
+                        strSql += "'" & txtObservaciones.Text & "')"
 
-                    strSql = "INSERT "
-                    strSql += "INTO "
-                    strSql += "incidencias "
-                    strSql += "(tipo, "
-                    strSql += "clave, "
-                    strSql += "fecha, "
-                    strSql += "observaciones) "
-                    strSql += "VALUES "
-                    strSql += "('" & cmbConcepto.Text & "', "
-                    strSql += "'" & cmbEmpleado.SelectedValue & "', "
-                    strSql += "'" & Format(dtpFecha.Value, "yyyyMMdd") & "', "
-                    strSql += "'" & txtObservaciones.Text & "')"
+                        cmdObj.CommandText = strSql
 
-                    cmdObj.CommandText = strSql
+                        Try
+                            cmdObj.ExecuteNonQuery()
+                            MessageBox.Show("Datos Guardados", "MENSAJE", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            cnObj.Close()
+                            Me.Close()
+                        Catch ex As Exception
+                            MessageBox.Show("Error al Guardar, " + ex.Message, "ERROR CRITICO", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        End Try
 
-                    Try
-                        cmdObj.ExecuteNonQuery()
-                        MessageBox.Show("Datos Guardados", "MENSAJE", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         cnObj.Close()
-                        Me.Close()
-                    Catch ex As Exception
-                        MessageBox.Show("Error al Guardar, " + ex.Message, "ERROR CRITICO", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                    End Try
 
-                    cnObj.Close()
+                    End If
 
                 End If
-               
 
             Case "SALIDA TEMPRANO"
 
-                If txtHora.Text <> "" Then
+                If Valida(cmbEmpleado.SelectedValue, Format(dtpFecha.Value, "yyyyMMdd"), "SALIDA TEMPRANO") = False Then
 
-                    strSql = "INSERT "
-                    strSql += "INTO "
-                    strSql += "incidencias "
-                    strSql += "(tipo, "
-                    strSql += "clave, "
-                    strSql += "fecha, "
-                    strSql += "observaciones, "
-                    strSql += "salida) "
-                    strSql += "VALUES "
-                    strSql += "('" & cmbConcepto.Text & "', "
-                    strSql += "'" & cmbEmpleado.SelectedValue & "', "
-                    strSql += "'" & Format(dtpFecha.Value, "yyyyMMdd") & "', "
-                    strSql += "'" & txtObservaciones.Text & "', "
-                    strSql += "'" & txtHora.Text & "')"
+                    If txtHora.Text <> "" Then
 
-                    cmdObj.CommandText = strSql
+                        strSql = "INSERT "
+                        strSql += "INTO "
+                        strSql += "incidencias "
+                        strSql += "(tipo, "
+                        strSql += "clave, "
+                        strSql += "fecha, "
+                        strSql += "observaciones, "
+                        strSql += "salida) "
+                        strSql += "VALUES "
+                        strSql += "('" & cmbConcepto.Text & "', "
+                        strSql += "'" & cmbEmpleado.SelectedValue & "', "
+                        strSql += "'" & Format(dtpFecha.Value, "yyyyMMdd") & "', "
+                        strSql += "'" & txtObservaciones.Text & "', "
+                        strSql += "'" & txtHora.Text & "')"
 
-                    Try
-                        cmdObj.ExecuteNonQuery()
-                        MessageBox.Show("Datos Guardados", "MENSAJE", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        cmdObj.CommandText = strSql
+
+                        Try
+                            cmdObj.ExecuteNonQuery()
+                            MessageBox.Show("Datos Guardados", "MENSAJE", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            cnObj.Close()
+                            Me.Close()
+                        Catch ex As Exception
+                            MessageBox.Show("Error al Guardar, " + ex.Message, "ERROR CRITICO", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        End Try
+
                         cnObj.Close()
-                        Me.Close()
-                    Catch ex As Exception
-                        MessageBox.Show("Error al Guardar, " + ex.Message, "ERROR CRITICO", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                    End Try
 
-                    cnObj.Close()
+                    Else
 
-                Else
+                        strSql = "INSERT "
+                        strSql += "INTO "
+                        strSql += "incidencias "
+                        strSql += "(tipo, "
+                        strSql += "clave, "
+                        strSql += "fecha, "
+                        strSql += "observaciones) "
+                        strSql += "VALUES "
+                        strSql += "('" & cmbConcepto.Text & "', "
+                        strSql += "'" & cmbEmpleado.SelectedValue & "', "
+                        strSql += "'" & Format(dtpFecha.Value, "yyyyMMdd") & "', "
+                        strSql += "'" & txtObservaciones.Text & "')"
 
-                    strSql = "INSERT "
-                    strSql += "INTO "
-                    strSql += "incidencias "
-                    strSql += "(tipo, "
-                    strSql += "clave, "
-                    strSql += "fecha, "
-                    strSql += "observaciones) "
-                    strSql += "VALUES "
-                    strSql += "('" & cmbConcepto.Text & "', "
-                    strSql += "'" & cmbEmpleado.SelectedValue & "', "
-                    strSql += "'" & Format(dtpFecha.Value, "yyyyMMdd") & "', "
-                    strSql += "'" & txtObservaciones.Text & "')"
+                        cmdObj.CommandText = strSql
 
-                    cmdObj.CommandText = strSql
+                        Try
+                            cmdObj.ExecuteNonQuery()
+                            MessageBox.Show("Datos Guardados", "MENSAJE", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            cnObj.Close()
+                            Me.Close()
+                        Catch ex As Exception
+                            MessageBox.Show("Error al Guardar, " + ex.Message, "ERROR CRITICO", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        End Try
 
-                    Try
-                        cmdObj.ExecuteNonQuery()
-                        MessageBox.Show("Datos Guardados", "MENSAJE", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         cnObj.Close()
-                        Me.Close()
-                    Catch ex As Exception
-                        MessageBox.Show("Error al Guardar, " + ex.Message, "ERROR CRITICO", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                    End Try
 
-                    cnObj.Close()
+                    End If
 
                 End If
-               
 
             Case "SALIDA TARDE"
 
-                If txtHora.Text <> "" Then
+                If Valida(cmbEmpleado.SelectedValue, Format(dtpFecha.Value, "yyyyMMdd"), "SALIDA TARDE") = False Then
 
-                    strSql = "INSERT "
-                    strSql += "INTO "
-                    strSql += "incidencias "
-                    strSql += "(tipo, "
-                    strSql += "clave, "
-                    strSql += "fecha, "
-                    strSql += "observaciones, "
-                    strSql += "salida) "
-                    strSql += "VALUES "
-                    strSql += "('" & cmbConcepto.Text & "', "
-                    strSql += "'" & cmbEmpleado.SelectedValue & "', "
-                    strSql += "'" & Format(dtpFecha.Value, "yyyyMMdd") & "', "
-                    strSql += "'" & txtObservaciones.Text & "', "
-                    strSql += "'" & txtHora.Text & "')"
+                    If txtHora.Text <> "" Then
 
-                    cmdObj.CommandText = strSql
+                        strSql = "INSERT "
+                        strSql += "INTO "
+                        strSql += "incidencias "
+                        strSql += "(tipo, "
+                        strSql += "clave, "
+                        strSql += "fecha, "
+                        strSql += "observaciones, "
+                        strSql += "salida) "
+                        strSql += "VALUES "
+                        strSql += "('" & cmbConcepto.Text & "', "
+                        strSql += "'" & cmbEmpleado.SelectedValue & "', "
+                        strSql += "'" & Format(dtpFecha.Value, "yyyyMMdd") & "', "
+                        strSql += "'" & txtObservaciones.Text & "', "
+                        strSql += "'" & txtHora.Text & "')"
 
-                    Try
-                        cmdObj.ExecuteNonQuery()
-                        MessageBox.Show("Datos Guardados", "MENSAJE", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        cmdObj.CommandText = strSql
+
+                        Try
+                            cmdObj.ExecuteNonQuery()
+                            MessageBox.Show("Datos Guardados", "MENSAJE", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            cnObj.Close()
+                            Me.Close()
+                        Catch ex As Exception
+                            MessageBox.Show("Error al Guardar, " + ex.Message, "ERROR CRITICO", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        End Try
+
                         cnObj.Close()
-                        Me.Close()
-                    Catch ex As Exception
-                        MessageBox.Show("Error al Guardar, " + ex.Message, "ERROR CRITICO", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                    End Try
 
-                    cnObj.Close()
+                    Else
 
-                Else
+                        strSql = "INSERT "
+                        strSql += "INTO "
+                        strSql += "incidencias "
+                        strSql += "(tipo, "
+                        strSql += "clave, "
+                        strSql += "fecha, "
+                        strSql += "observaciones) "
+                        strSql += "VALUES "
+                        strSql += "('" & cmbConcepto.Text & "', "
+                        strSql += "'" & cmbEmpleado.SelectedValue & "', "
+                        strSql += "'" & Format(dtpFecha.Value, "yyyyMMdd") & "', "
+                        strSql += "'" & txtObservaciones.Text & "')"
 
-                    strSql = "INSERT "
-                    strSql += "INTO "
-                    strSql += "incidencias "
-                    strSql += "(tipo, "
-                    strSql += "clave, "
-                    strSql += "fecha, "
-                    strSql += "observaciones) "
-                    strSql += "VALUES "
-                    strSql += "('" & cmbConcepto.Text & "', "
-                    strSql += "'" & cmbEmpleado.SelectedValue & "', "
-                    strSql += "'" & Format(dtpFecha.Value, "yyyyMMdd") & "', "
-                    strSql += "'" & txtObservaciones.Text & "')"
+                        cmdObj.CommandText = strSql
 
-                    cmdObj.CommandText = strSql
+                        Try
+                            cmdObj.ExecuteNonQuery()
+                            MessageBox.Show("Datos Guardados", "MENSAJE", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            cnObj.Close()
+                            Me.Close()
+                        Catch ex As Exception
+                            MessageBox.Show("Error al Guardar, " + ex.Message, "ERROR CRITICO", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        End Try
 
-                    Try
-                        cmdObj.ExecuteNonQuery()
-                        MessageBox.Show("Datos Guardados", "MENSAJE", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         cnObj.Close()
-                        Me.Close()
-                    Catch ex As Exception
-                        MessageBox.Show("Error al Guardar, " + ex.Message, "ERROR CRITICO", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                    End Try
 
-                    cnObj.Close()
+                    End If
 
                 End If
-                
 
         End Select
 
@@ -322,6 +335,44 @@ Public Class frmPermiso
         cmbEmpleado.DataSource = dsObj.Tables("Empleado")
 
     End Sub
+
+    Private Function Valida(ByVal clave As Integer, ByVal fecha As String, ByVal tipo As String) As Boolean
+
+        Dim Valor As Boolean = False
+
+        Dim cnObj As New MySqlConnection
+        cnObj = conectar()
+
+        Dim cmdObj As New MySqlCommand
+        cmdObj.Connection = cnObj
+
+        Dim strSql As String
+
+        strSql = "SELECT "
+        strSql += "* "
+        strSql += "FROM "
+        strSql += "incidencias "
+        strSql += "WHERE "
+        strSql += "clave = '" & clave & "' AND "
+        strSql += "fecha = '" & fecha & "' AND "
+        strSql += "tipo = '" & tipo & "'"
+
+        cmdObj.CommandText = strSql
+        Dim rdrObj As MySqlDataReader
+        rdrObj = cmdObj.ExecuteReader
+
+        If rdrObj.HasRows = True Then
+            Valor = True
+        Else
+            Valor = False
+        End If
+
+        Return Valor
+
+        rdrObj.Close()
+        cnObj.Close()
+
+    End Function
 
 #End Region
 
