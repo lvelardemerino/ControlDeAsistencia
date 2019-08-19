@@ -4,9 +4,15 @@ Imports System.Math
 
 Public Class frmAsistencia
 
+#Region "VARIABLES DE ENTORNO"
+
     Dim mes, anio, falta As Integer
     Dim entrada, salida, fechaCambio As String
     Dim TotTiempoFavor, TotTiempoContra, TotFaltas, TotalRetardos, numRetardos, numRetComida, TotMesAnt, TotMes, Tipo As Integer
+
+#End Region
+
+#Region "FORMULARIO"
 
     Private Sub frmAsistencia_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -57,6 +63,8 @@ Public Class frmAsistencia
         Imprime()
 
     End Sub
+
+#End Region
 
 #Region "FUNCIONES"
 
@@ -1193,11 +1201,11 @@ Public Class frmAsistencia
         e.Graphics.DrawString("FECHA", prFont, Brushes.Black, 14, Salto)
         e.Graphics.DrawString("DIA", prFont, Brushes.Black, 75, Salto)
 
-        e.Graphics.DrawString("ENTRADA", prFont, Brushes.Black, 120, Salto)
-        e.Graphics.DrawString("JORNADA", prFont, Brushes.Black, 120, Salto + 10)
+        e.Graphics.DrawString("ENTRADA", prFont, Brushes.Black, 125, Salto)
+        e.Graphics.DrawString("JORNADA", prFont, Brushes.Black, 125, Salto + 10)
 
-        e.Graphics.DrawString("ENTRADA", prFont, Brushes.Black, 195, Salto)
-        e.Graphics.DrawString("REGISTRADA", prFont, Brushes.Black, 195, Salto + 10)
+        e.Graphics.DrawString(" ENTRADA", prFont, Brushes.Black, 185, Salto)
+        e.Graphics.DrawString("REGISTRADA", prFont, Brushes.Black, 185, Salto + 10)
 
         e.Graphics.DrawString("SALIDA", prFont, Brushes.Black, 260, Salto)
         e.Graphics.DrawString("COMIDA", prFont, Brushes.Black, 260, Salto + 10)
@@ -1205,21 +1213,27 @@ Public Class frmAsistencia
         e.Graphics.DrawString("ENTRADA", prFont, Brushes.Black, 315, Salto)
         e.Graphics.DrawString("COMIDA", prFont, Brushes.Black, 319, Salto + 10)
 
-        e.Graphics.DrawString("SALIDA", prFont, Brushes.Black, 385, Salto)
-        e.Graphics.DrawString("REGISTRADA", prFont, Brushes.Black, 385, Salto + 10)
+        e.Graphics.DrawString(" SALIDA", prFont, Brushes.Black, 375, Salto)
+        e.Graphics.DrawString("REGISTRADA", prFont, Brushes.Black, 375, Salto + 10)
 
-        e.Graphics.DrawString("JORNADA", prFont, Brushes.Black, 380, Salto + 10)
-        e.Graphics.DrawString("SALIDA", prFont, Brushes.Black, 450, Salto)
+        e.Graphics.DrawString("SALIDA", prFont, Brushes.Black, 445, Salto)
+        e.Graphics.DrawString("JORNADA", prFont, Brushes.Black, 445, Salto + 10)
 
-        e.Graphics.DrawString("COMIDA", prFont, Brushes.Black, 500, Salto)
+        e.Graphics.DrawString("COMIDA", prFont, Brushes.Black, 505, Salto)
 
-        e.Graphics.DrawString("TIEMPO A", prFont, Brushes.Black, 550, Salto)
-        e.Graphics.DrawString("FAVOR", prFont, Brushes.Black, 555, Salto + 10)
+        e.Graphics.DrawString("ENTRADA", prFont, Brushes.Black, 555, Salto)
+        e.Graphics.DrawString(" TARDE", prFont, Brushes.Black, 555, Salto + 10)
 
-        e.Graphics.DrawString("TIEMPO EN", prFont, Brushes.Black, 610, Salto)
-        e.Graphics.DrawString("CONTRA", prFont, Brushes.Black, 610, Salto + 10)
+        e.Graphics.DrawString("ENTRADA", prFont, Brushes.Black, 615, Salto)
+        e.Graphics.DrawString("TEMPRANO", prFont, Brushes.Black, 615, Salto + 10)
 
-        e.Graphics.DrawString("CONCEPTO", prFont, Brushes.Black, 675, Salto)
+        e.Graphics.DrawString("SALIDA", prFont, Brushes.Black, 685, Salto)
+        e.Graphics.DrawString("TARDE", prFont, Brushes.Black, 685, Salto + 10)
+
+        e.Graphics.DrawString(" SALIDA", prFont, Brushes.Black, 735, Salto)
+        e.Graphics.DrawString("TEMPRANO", prFont, Brushes.Black, 735, Salto + 10)
+
+        e.Graphics.DrawString("CONCEPTO", prFont, Brushes.Black, 820, Salto)
 
         Salto += 30
 
@@ -1232,10 +1246,9 @@ Public Class frmAsistencia
             'Dia
             e.Graphics.DrawString(fgJornada.GetData(i, 2), prFont, Brushes.Black, 65, Salto)
             'Entrada Jornada
-            e.Graphics.DrawString(fgJornada.GetData(i, 3), prFont, Brushes.Black, 122, Salto)
+            e.Graphics.DrawString(fgJornada.GetData(i, 3), prFont, Brushes.Black, 130, Salto)
 
             'Entrada
-
             e.Graphics.DrawString(fgJornada.GetData(i, 4), prFont, Brushes.Black, 200, Salto)
 
             'Salida Comida
@@ -1244,22 +1257,26 @@ Public Class frmAsistencia
             'Entrada Comida
             e.Graphics.DrawString(fgJornada.GetData(i, 6), prFont, Brushes.Black, 320, Salto)
 
-            'Salida Jornada
-            e.Graphics.DrawString(fgJornada.GetData(i, 7), prFont, Brushes.Black, 380, Salto)
+            'Salida 
+            e.Graphics.DrawString(fgJornada.GetData(i, 7), prFont, Brushes.Black, 375, Salto)
 
-            'Salida
-            e.Graphics.DrawString(fgJornada.GetData(i, 8), prFont, Brushes.Black, 450, Salto)
+            'Salida Jornada
+            e.Graphics.DrawString(fgJornada.GetData(i, 8), prFont, Brushes.Black, 445, Salto)
 
             'Tiempo de Comida
-
             e.Graphics.DrawString(fgJornada.GetData(i, 9), prFont, Brushes.Black, 510, Salto)
 
-            'Tiempo A Favor
-            e.Graphics.DrawString(fgJornada.GetData(i, 10), prFont, Brushes.Red, 570, Salto)
+            'Entrada Tarde
+            e.Graphics.DrawString(fgJornada.GetData(i, 10), prFont, Brushes.Black, 565, Salto)
 
-            'Tiempo En Contra
+            'Entrada Temprano
+            e.Graphics.DrawString(fgJornada.GetData(i, 11), prFont, Brushes.Black, 620, Salto)
 
-            e.Graphics.DrawString(fgJornada.GetData(i, 11), prFont, Brushes.Red, 630, Salto)
+            'Salida Tarde
+            e.Graphics.DrawString(fgJornada.GetData(i, 12), prFont, Brushes.Black, 670, Salto)
+
+            'Salida Temprano
+            e.Graphics.DrawString(fgJornada.GetData(i, 13), prFont, Brushes.Black, 720, Salto)
 
             Salto += 14
 
@@ -1277,33 +1294,33 @@ Public Class frmAsistencia
         'Retardo Comida
         If numRetComida > 0 Then
             e.Graphics.DrawString("RETARDOS COMIDA: ", prFont, Brushes.Black, 10, 670)
-            e.Graphics.DrawString(numRetComida, prFont, Brushes.Green, 115, 670)
+            e.Graphics.DrawString(numRetComida, prFont, Brushes.Red, 115, 670)
         Else
             e.Graphics.DrawString("RETARDOS COMIDA: ", prFont, Brushes.Black, 10, 670)
         End If
 
 
-        'Tiempo a Favor
+        'Nuemro de Retardos
         If numRetardos > 0 Then
             e.Graphics.DrawString("RETARDOS: ", prFont, Brushes.Black, 10, 690)
-            e.Graphics.DrawString(numRetardos, prFont, Brushes.Green, 115, 690)
+            e.Graphics.DrawString(numRetardos, prFont, Brushes.Red, 115, 690)
         Else
             e.Graphics.DrawString("RETARDOS: ", prFont, Brushes.Black, 10, 690)
         End If
 
 
-        'Tiempo en Contra
+        'Tiempo a Favor
         If TotTiempoFavor > 0 Then
             e.Graphics.DrawString("TIEMPO A FAVOR: ", prFont, Brushes.Black, 10, 710)
-            e.Graphics.DrawString(ConvierteNumeroHora(TotTiempoFavor), prFont, Brushes.Red, 115, 710)
+            e.Graphics.DrawString(ConvierteNumeroHora(TotTiempoFavor), prFont, Brushes.Green, 115, 710)
         Else
             e.Graphics.DrawString("TIEMPO A FAVOR: ", prFont, Brushes.Black, 10, 710)
         End If
 
-        'Retardos
+        'Tiempo en Contra
         If TotTiempoContra > 0 Then
             e.Graphics.DrawString("TIEMPO EN CONTRA: ", prFont, Brushes.Black, 10, 730)
-            e.Graphics.DrawString(ConvierteNumeroHora(TotTiempoContra), prFont, Brushes.Black, 115, 730)
+            e.Graphics.DrawString(ConvierteNumeroHora(TotTiempoContra), prFont, Brushes.Red, 115, 730)
         Else
             e.Graphics.DrawString("TIEMPO EN CONTRA: ", prFont, Brushes.Black, 10, 730)
         End If
@@ -1311,10 +1328,14 @@ Public Class frmAsistencia
         'Tiempo Mes Anterior
         If Tipo = 1 Then
             e.Graphics.DrawString("MES ANTERIOR: ", prFont, Brushes.Black, 10, 750)
-            e.Graphics.DrawString(ConvierteNumeroHora(Abs(TotMesAnt)), prFont, Brushes.Green, 115, 750)
+            If TotMesAnt <> 0 Then
+                e.Graphics.DrawString(ConvierteNumeroHora(Abs(TotMesAnt)), prFont, Brushes.Green, 115, 750)
+            End If
         Else
             e.Graphics.DrawString("MES ANTERIOR: ", prFont, Brushes.Black, 10, 750)
-            e.Graphics.DrawString(ConvierteNumeroHora(Abs(TotMesAnt)), prFont, Brushes.Red, 115, 750)
+            If TotMesAnt <> 0 Then
+                e.Graphics.DrawString(ConvierteNumeroHora(Abs(TotMesAnt)), prFont, Brushes.Red, 115, 750)
+            End If
         End If
 
         'Total del Mes
