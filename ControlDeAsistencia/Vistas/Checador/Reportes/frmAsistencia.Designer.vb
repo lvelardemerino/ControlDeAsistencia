@@ -66,6 +66,8 @@ Partial Class frmAsistencia
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.fgJornada = New C1.Win.C1FlexGrid.C1FlexGrid()
         Me.pdReporte = New System.Drawing.Printing.PrintDocument()
+        Me.lblFaltas = New System.Windows.Forms.Label()
+        Me.lblFal = New System.Windows.Forms.Label()
         Me.tsMenu.SuspendLayout()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
@@ -131,13 +133,15 @@ Partial Class frmAsistencia
         '
         Me.SplitContainer1.Panel2.Controls.Add(Me.Panel4)
         Me.SplitContainer1.Panel2.Controls.Add(Me.Panel3)
-        Me.SplitContainer1.Size = New System.Drawing.Size(1332, 485)
+        Me.SplitContainer1.Size = New System.Drawing.Size(1332, 542)
         Me.SplitContainer1.SplitterDistance = 265
         Me.SplitContainer1.TabIndex = 1
         '
         'Panel2
         '
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel2.Controls.Add(Me.lblFal)
+        Me.Panel2.Controls.Add(Me.lblFaltas)
         Me.Panel2.Controls.Add(Me.lblTotalMes)
         Me.Panel2.Controls.Add(Me.lblMesAnterior)
         Me.Panel2.Controls.Add(Me.lblTiempoContra)
@@ -152,13 +156,13 @@ Partial Class frmAsistencia
         Me.Panel2.Controls.Add(Me.lblRetCom)
         Me.Panel2.Location = New System.Drawing.Point(3, 282)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(247, 200)
+        Me.Panel2.Size = New System.Drawing.Size(247, 248)
         Me.Panel2.TabIndex = 1
         '
         'lblTotalMes
         '
         Me.lblTotalMes.AutoSize = True
-        Me.lblTotalMes.Location = New System.Drawing.Point(142, 174)
+        Me.lblTotalMes.Location = New System.Drawing.Point(142, 209)
         Me.lblTotalMes.Name = "lblTotalMes"
         Me.lblTotalMes.Size = New System.Drawing.Size(39, 13)
         Me.lblTotalMes.TabIndex = 13
@@ -168,7 +172,7 @@ Partial Class frmAsistencia
         'lblMesAnterior
         '
         Me.lblMesAnterior.AutoSize = True
-        Me.lblMesAnterior.Location = New System.Drawing.Point(142, 142)
+        Me.lblMesAnterior.Location = New System.Drawing.Point(142, 177)
         Me.lblMesAnterior.Name = "lblMesAnterior"
         Me.lblMesAnterior.Size = New System.Drawing.Size(39, 13)
         Me.lblMesAnterior.TabIndex = 12
@@ -178,7 +182,7 @@ Partial Class frmAsistencia
         'lblTiempoContra
         '
         Me.lblTiempoContra.AutoSize = True
-        Me.lblTiempoContra.Location = New System.Drawing.Point(142, 111)
+        Me.lblTiempoContra.Location = New System.Drawing.Point(142, 146)
         Me.lblTiempoContra.Name = "lblTiempoContra"
         Me.lblTiempoContra.Size = New System.Drawing.Size(39, 13)
         Me.lblTiempoContra.TabIndex = 11
@@ -188,7 +192,7 @@ Partial Class frmAsistencia
         'lblTiempoFavor
         '
         Me.lblTiempoFavor.AutoSize = True
-        Me.lblTiempoFavor.Location = New System.Drawing.Point(142, 79)
+        Me.lblTiempoFavor.Location = New System.Drawing.Point(142, 114)
         Me.lblTiempoFavor.Name = "lblTiempoFavor"
         Me.lblTiempoFavor.Size = New System.Drawing.Size(39, 13)
         Me.lblTiempoFavor.TabIndex = 10
@@ -218,7 +222,7 @@ Partial Class frmAsistencia
         'lblTotMes
         '
         Me.lblTotMes.AutoSize = True
-        Me.lblTotMes.Location = New System.Drawing.Point(7, 174)
+        Me.lblTotMes.Location = New System.Drawing.Point(7, 209)
         Me.lblTotMes.Name = "lblTotMes"
         Me.lblTotMes.Size = New System.Drawing.Size(74, 13)
         Me.lblTotMes.TabIndex = 5
@@ -227,7 +231,7 @@ Partial Class frmAsistencia
         'lblMesAnt
         '
         Me.lblMesAnt.AutoSize = True
-        Me.lblMesAnt.Location = New System.Drawing.Point(7, 142)
+        Me.lblMesAnt.Location = New System.Drawing.Point(7, 177)
         Me.lblMesAnt.Name = "lblMesAnt"
         Me.lblMesAnt.Size = New System.Drawing.Size(69, 13)
         Me.lblMesAnt.TabIndex = 4
@@ -245,7 +249,7 @@ Partial Class frmAsistencia
         'lblTieContra
         '
         Me.lblTieContra.AutoSize = True
-        Me.lblTieContra.Location = New System.Drawing.Point(7, 111)
+        Me.lblTieContra.Location = New System.Drawing.Point(7, 146)
         Me.lblTieContra.Name = "lblTieContra"
         Me.lblTieContra.Size = New System.Drawing.Size(94, 13)
         Me.lblTieContra.TabIndex = 2
@@ -254,7 +258,7 @@ Partial Class frmAsistencia
         'lblTieFavor
         '
         Me.lblTieFavor.AutoSize = True
-        Me.lblTieFavor.Location = New System.Drawing.Point(7, 79)
+        Me.lblTieFavor.Location = New System.Drawing.Point(7, 114)
         Me.lblTieFavor.Name = "lblTieFavor"
         Me.lblTieFavor.Size = New System.Drawing.Size(84, 13)
         Me.lblTieFavor.TabIndex = 1
@@ -507,11 +511,30 @@ Partial Class frmAsistencia
         'pdReporte
         '
         '
+        'lblFaltas
+        '
+        Me.lblFaltas.AutoSize = True
+        Me.lblFaltas.Location = New System.Drawing.Point(7, 82)
+        Me.lblFaltas.Name = "lblFaltas"
+        Me.lblFaltas.Size = New System.Drawing.Size(38, 13)
+        Me.lblFaltas.TabIndex = 14
+        Me.lblFaltas.Text = "Faltas:"
+        '
+        'lblFal
+        '
+        Me.lblFal.AutoSize = True
+        Me.lblFal.Location = New System.Drawing.Point(142, 82)
+        Me.lblFal.Name = "lblFal"
+        Me.lblFal.Size = New System.Drawing.Size(39, 13)
+        Me.lblFal.TabIndex = 15
+        Me.lblFal.Text = "Label2"
+        Me.lblFal.Visible = False
+        '
         'frmAsistencia
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1332, 510)
+        Me.ClientSize = New System.Drawing.Size(1332, 567)
         Me.Controls.Add(Me.SplitContainer1)
         Me.Controls.Add(Me.tsMenu)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
@@ -587,4 +610,6 @@ Partial Class frmAsistencia
     Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
     Friend WithEvents lblComida As System.Windows.Forms.Label
     Friend WithEvents pdReporte As System.Drawing.Printing.PrintDocument
+    Friend WithEvents lblFal As Label
+    Friend WithEvents lblFaltas As Label
 End Class

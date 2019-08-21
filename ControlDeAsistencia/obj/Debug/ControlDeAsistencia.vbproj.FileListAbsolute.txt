@@ -110,6 +110,7 @@ C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\D
 C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmCambioDescanso.resources
 C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmDiaFestivo.resources
 C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmEliminaIncidencia.resources
+C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmEliminarJornada.resources
 C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmEmpleados.resources
 C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmEmpleadosMod.resources
 C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmErrores.resources

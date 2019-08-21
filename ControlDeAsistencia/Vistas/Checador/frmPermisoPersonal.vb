@@ -15,6 +15,12 @@ Public Class frmPermisoPersonal
 
     End Sub
 
+    Private Sub tsbGuardar_Click(sender As Object, e As EventArgs) Handles tsbGuardar.Click
+
+        Guardar()
+
+    End Sub
+
 #Region "FUNCIONES"
 
     Private Sub Sucursales()
@@ -51,6 +57,58 @@ Public Class frmPermisoPersonal
 
     Private Sub Guardar()
 
+        Dim Resp As Boolean = False
+
+        Resp = Valida("PERMISO PERSONAL", cmbEmpleado.SelectedValue, Format(dtpFecha.Value, "yyyyMMdd"))
+
+        If Resp = False Then
+
+            Dim cnObj As New MySqlConnection
+            cnObj = conectar()
+
+            Dim cmdObj As New MySqlCommand
+            cmdObj.Connection = cnObj
+
+            Dim strSql As String
+
+            strSql = "INSERT "
+            strSql += "INTO "
+            strSql += "incidencias "
+            strSql += "(tipo, "
+            strSql += "clave, "
+            strSql += "fecha, "
+            strSql += "observaciones, "
+            strSql += "entrada, "
+            strSql += "salida) "
+            strSql += "VALUES "
+            strSql += "('PERMISO PERSONAL', "
+            strSql += "'" & cmbEmpleado.SelectedValue & "', "
+            strSql += "'" & Format(dtpFecha.Value, "yyyyMMdd") & "', "
+            strSql += "'" & txtObservaciones.Text & "', "
+            strSql += "'" & txtHoraIni.Text & "', "
+            strSql += "'" & txtHoraFin.Text & "') "
+
+            cmdObj.CommandText = strSql
+
+            Try
+                cmdObj.ExecuteNonQuery()
+                MessageBox.Show("Datos Guardados", "MENSAJE", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                cnObj.Close()
+                Me.Close()
+            Catch ex As Exception
+                MessageBox.Show("Error al Guardar, " + ex.Message, "ERROR CRITICO", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+
+            cnObj.Close()
+
+        End If
+
+    End Sub
+
+    Private Function Valida(ByVal tipo As String, ByVal clave As Integer, ByVal fecha As String) As Boolean
+
+        Dim Valor As Boolean = False
+
         Dim cnObj As New MySqlConnection
         cnObj = conectar()
 
@@ -59,39 +117,32 @@ Public Class frmPermisoPersonal
 
         Dim strSql As String
 
-        strSql = "INSERT "
-        strSql += "INTO "
+        strSql = "SELECT "
+        strSql += "* "
+        strSql += "FROM "
         strSql += "incidencias "
-        strSql += "(tipo, "
-        strSql += "clave, "
-        strSql += "fecha, "
-        strSql += "observaciones, "
-        strSql += "entrada, "
-        strSql += "salida) "
-        strSql += "VALUES "
-        strSql += "('PERMISO PERSONAL', "
-        strSql += "'" & cmbEmpleado.SelectedValue & "', "
-        strSql += "'" & Format(dtpFecha.Value, "yyyyMMdd") & "', "
-        strSql += "'" & txtObservaciones.Text & "', "
-        strSql += "'" & txtHoraIni.Text & "', "
-        strSql += "'" & txtHoraFin.Text & "') "
+        strSql += "WHERE "
+        strSql += "tipo = '" & tipo & "' AND "
+        strSql += "clave = '" & clave & "' AND "
+        strSql += "fecha = '" & fecha & "'"
 
         cmdObj.CommandText = strSql
+        Dim rdrObj As MySqlDataReader
+        rdrObj = cmdObj.ExecuteReader
 
-        Try
-            cmdObj.ExecuteNonQuery()
-            MessageBox.Show("Datos Guardados", "MENSAJE", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            cnObj.Close()
-            Me.Close()
-        Catch ex As Exception
-            MessageBox.Show("Error al Guardar, " + ex.Message, "ERROR CRITICO", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
+        If rdrObj.HasRows = True Then
+            Valor = True
+        Else
+            Valor = False
+        End If
 
+        rdrObj.Close()
         cnObj.Close()
 
-    End Sub
+        Return Valor
+
+    End Function
 
 #End Region
-
 
 End Class

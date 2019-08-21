@@ -76,7 +76,7 @@ Public Class frmFalta
             strSql += "observaciones, "
             strSql += "falta) "
             strSql += "VALUES "
-            strSql += "('FALTA', "
+            strSql += "('" & cmbFalta.Text & "', "
             strSql += "'" & cmbEmpleado.SelectedValue & "', "
             strSql += "'" & Format(dtpFecha.Value, "yyyyMMdd") & "', "
             strSql += "'" & txtObservaciones.Text & "', "

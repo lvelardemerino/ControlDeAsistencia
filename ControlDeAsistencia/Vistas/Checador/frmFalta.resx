@@ -123,11 +123,11 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="tsMenu.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAAEAAAAYCAYAAAA7zJfaAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAfdEVYdFNvZnR3YXJlAE1hY3JvbWVkaWEgRmlyZXdvcmtz
-        IDi1aNJ4AAAAdUlEQVQYVw3E7QrBABiG4fvoJElKpCRJkhrLpkWWIpFI5Hh8zeabU3q814+LlHMQ6e5R
-        ZNyTyPasnH8W+f5FFIJIFAdWaXgV5ZFVCWNRHSeiNrmJ+vQuGrOHaM6t1uIp2suXcFZv0Vlb7sbyth/h
-        774i2P/0B1AYPyxDcU8wAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAAAEAAAAYCAYAAAA7zJfaAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EgAACxIB0t1+/AAAAB90RVh0U29mdHdhcmUATWFjcm9tZWRpYSBGaXJld29ya3MgOLVo0ngAAAB1SURB
+        VBhXDcTtCsEAGIbh++gkSUqkJEmSGsumRZYikUjkeHzN5ptTerzXj4uUcxDp7lFk3JPI9qycfxb5/kUU
+        gkgUB1ZpeBXlkVUJY1EdJ6I2uYn69C4as4dozq3W4inay5dwVm/RWVvuxvK2H+HvviLY//QHUBg/LENx
+        TzAAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="tsbGuardar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

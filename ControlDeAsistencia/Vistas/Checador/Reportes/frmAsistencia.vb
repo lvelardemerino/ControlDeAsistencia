@@ -70,7 +70,7 @@ Public Class frmAsistencia
 
     Private Sub Configura()
 
-        fgJornada.Cols.Count = 15
+        fgJornada.Cols.Count = 16
         fgJornada.Rows.Count = 1
 
         fgJornada.Cols(0).Caption = "CLAVE"
@@ -101,8 +101,10 @@ Public Class frmAsistencia
         fgJornada.Cols(12).DataType = GetType(String)
         fgJornada.Cols(13).Caption = "SALIDA TEMPRANO"
         fgJornada.Cols(13).DataType = GetType(String)
-        fgJornada.Cols(14).Caption = "CONCEPTO"
+        fgJornada.Cols(14).Caption = "FALTA"
         fgJornada.Cols(14).DataType = GetType(String)
+        fgJornada.Cols(15).Caption = "CONCEPTO"
+        fgJornada.Cols(15).DataType = GetType(String)
 
         fgJornada.AutoSizeCols()
 
@@ -268,7 +270,7 @@ Public Class frmAsistencia
 
                 If UCase(Format(DiaConsecutivo, "dddd")) = "DOMINGO" Then
 
-                    fgJornada.SetData(fgJornada.Rows.Count - 1, 14, "DESCANSO")
+                    fgJornada.SetData(fgJornada.Rows.Count - 1, 15, "DESCANSO")
 
                 Else
 
@@ -278,7 +280,8 @@ Public Class frmAsistencia
                         Select Case Incidencias(ClaveEmp, Format(DiaConsecutivo, "yyyyMMdd"))
 
                             Case "FALTA"
-                                fgJornada.SetData(fgJornada.Rows.Count - 1, 14, "FALTA")
+
+                                fgJornada.SetData(fgJornada.Rows.Count - 1, 15, "FALTA")
 
                                 Dim crRegistro As New C1.Win.C1FlexGrid.CellRange
 
@@ -294,23 +297,41 @@ Public Class frmAsistencia
                                 crRegistro = fgJornada.GetCellRange(Cuenta, 7)
                                 crRegistro.Style = fgJornada.Styles("CustomStyle1")
 
-                                intFaltas += 1
+                                'intFaltas += 1
+
+                            Case "FALTA AUTORIZADA"
+
+                                fgJornada.SetData(fgJornada.Rows.Count - 1, 15, "FALTA AUTORIZADA")
+
+                                Dim crRegistro As New C1.Win.C1FlexGrid.CellRange
+
+                                crRegistro = fgJornada.GetCellRange(Cuenta, 4)
+                                crRegistro.Style = fgJornada.Styles("CustomStyle1")
+
+                                crRegistro = fgJornada.GetCellRange(Cuenta, 5)
+                                crRegistro.Style = fgJornada.Styles("CustomStyle1")
+
+                                crRegistro = fgJornada.GetCellRange(Cuenta, 6)
+                                crRegistro.Style = fgJornada.Styles("CustomStyle1")
+
+                                crRegistro = fgJornada.GetCellRange(Cuenta, 7)
+                                crRegistro.Style = fgJornada.Styles("CustomStyle1")
 
                             Case "ENTRADA TEMPRANO"
-                                fgJornada.SetData(fgJornada.Rows.Count - 1, 14, "ENTRADA TEMPRANO")
+                                fgJornada.SetData(fgJornada.Rows.Count - 1, 15, "ENTRADA TEMPRANO")
 
                             Case "ENTRADA TARDE"
-                                fgJornada.SetData(fgJornada.Rows.Count - 1, 14, "ENTRADA TARDE")
+                                fgJornada.SetData(fgJornada.Rows.Count - 1, 15, "ENTRADA TARDE")
 
                             Case "SALIDA TEMPRANO"
 
-                                fgJornada.SetData(fgJornada.Rows.Count - 1, 14, "SALIDA TEMPRANO")
+                                fgJornada.SetData(fgJornada.Rows.Count - 1, 15, "SALIDA TEMPRANO")
 
                             Case "SALIDA TARDE"
-                                fgJornada.SetData(fgJornada.Rows.Count - 1, 14, "SALIDA TARDE")
+                                fgJornada.SetData(fgJornada.Rows.Count - 1, 15, "SALIDA TARDE")
 
                             Case "CAMBIO DESCANSO"
-                                fgJornada.SetData(fgJornada.Rows.Count - 1, 14, "CAMBIO DESCANSO")
+                                fgJornada.SetData(fgJornada.Rows.Count - 1, 15, "CAMBIO DESCANSO")
 
                         End Select
 
@@ -319,23 +340,23 @@ Public Class frmAsistencia
                         'Revisamos si es dia de Vacaciones
                         If Vacaciones(ClaveEmp, Format(DiaConsecutivo, "yyyyMMdd")) <> "" Then
 
-                            fgJornada.SetData(fgJornada.Rows.Count - 1, 14, "VACACIONES")
+                            fgJornada.SetData(fgJornada.Rows.Count - 1, 15, "VACACIONES")
 
                         Else
 
                             If Festivo(Format(DiaConsecutivo, "yyyyMMdd")) <> "" Then
 
-                                fgJornada.SetData(fgJornada.Rows.Count - 1, 14, "DIA FESTIVO")
+                                fgJornada.SetData(fgJornada.Rows.Count - 1, 15, "DIA FESTIVO")
 
                             Else
 
                                 If Descanso(ClaveEmp, Format(DiaConsecutivo, "yyyyMMdd")) <> "" Then
 
-                                    fgJornada.SetData(fgJornada.Rows.Count - 1, 14, "DESCANSO")
+                                    fgJornada.SetData(fgJornada.Rows.Count - 1, 15, "DESCANSO")
 
                                 Else
 
-                                    fgJornada.SetData(fgJornada.Rows.Count - 1, 14, "SIN REGISTRO")
+                                    fgJornada.SetData(fgJornada.Rows.Count - 1, 15, "SIN REGISTRO")
 
                                     Dim crRegistro As New C1.Win.C1FlexGrid.CellRange
 
@@ -462,7 +483,7 @@ Public Class frmAsistencia
 
             If rdrObj.HasRows = True Then
 
-                fgJornada.SetData(i, 14, "DESCANSO")
+                fgJornada.SetData(i, 15, "DESCANSO")
 
             End If
 
@@ -917,9 +938,23 @@ Public Class frmAsistencia
 
                                 TotFaltas += 1
 
+                            Case "FALTA AUTORIZADA"
+
+                                If fgJornada.GetData(i, 3) <> "" And fgJornada.GetData(i, 8) <> "" Then
+
+                                    TiempoTemp = DateDiff("n", fgJornada.GetData(i, 3), fgJornada.GetData(i, 8))
+                                    TiempoTemp -= 60
+
+                                    Dim crRegistro As New C1.Win.C1FlexGrid.CellRange
+                                    crRegistro = fgJornada.GetCellRange(i, 14)
+                                    crRegistro.Style = fgJornada.Styles("CustomStyle5")
+                                    fgJornada.SetData(i, 14, ConvierteNumeroHora(TiempoTemp))
+
+                                    difTiempoContra += TiempoTemp
+
+                                End If
+
                             Case Else
-
-
 
                         End Select
 
@@ -982,6 +1017,12 @@ Public Class frmAsistencia
             End If
 
         Next
+
+        If TotFaltas > 0 Then
+            lblFal.Text = TotFaltas
+            lblFal.ForeColor = Color.Red
+            lblFal.Visible = True
+        End If
 
         If TotTiempoFavor > 0 Then
             lblTiempoFavor.Text = ConvierteNumeroHora(TotTiempoFavor)

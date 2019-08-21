@@ -41,6 +41,7 @@ Partial Class frmMdi
         Me.tsmiAutorizarFalta = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiPermisoPersonal = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiCambioDescanso = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiEliminaIncidencia = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiVacaciones = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiDiasFestivos = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiTiempoEmpleado = New System.Windows.Forms.ToolStripMenuItem()
@@ -56,13 +57,12 @@ Partial Class frmMdi
         Me.tmrVentanaOficinas = New System.Windows.Forms.Timer(Me.components)
         Me.bgwActualizar = New System.ComponentModel.BackgroundWorker()
         Me.tmrHora = New System.Windows.Forms.Timer(Me.components)
-        Me.tsmiEliminaIncidencia = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsMenuInf = New System.Windows.Forms.ToolStrip()
         Me.tslHora = New System.Windows.Forms.ToolStripLabel()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.tslActualizando = New System.Windows.Forms.ToolStripLabel()
-        Me.tslVersion = New System.Windows.Forms.ToolStripLabel()
         Me.tslVer = New System.Windows.Forms.ToolStripLabel()
+        Me.tslVersion = New System.Windows.Forms.ToolStripLabel()
         Me.tsMenu.SuspendLayout()
         Me.tsMenuInf.SuspendLayout()
         Me.SuspendLayout()
@@ -114,36 +114,36 @@ Partial Class frmMdi
         'PlantillaToolStripMenuItem
         '
         Me.PlantillaToolStripMenuItem.Name = "PlantillaToolStripMenuItem"
-        Me.PlantillaToolStripMenuItem.Size = New System.Drawing.Size(127, 22)
+        Me.PlantillaToolStripMenuItem.Size = New System.Drawing.Size(161, 22)
         Me.PlantillaToolStripMenuItem.Text = "Plantilla"
         '
         'tsmiJornadaEmpleado
         '
         Me.tsmiJornadaEmpleado.Name = "tsmiJornadaEmpleado"
-        Me.tsmiJornadaEmpleado.Size = New System.Drawing.Size(127, 22)
+        Me.tsmiJornadaEmpleado.Size = New System.Drawing.Size(161, 22)
         Me.tsmiJornadaEmpleado.Tag = "10"
         Me.tsmiJornadaEmpleado.Text = "Empleado"
         '
         'tsmiJornadaRevisar
         '
         Me.tsmiJornadaRevisar.Name = "tsmiJornadaRevisar"
-        Me.tsmiJornadaRevisar.Size = New System.Drawing.Size(127, 22)
+        Me.tsmiJornadaRevisar.Size = New System.Drawing.Size(161, 22)
         Me.tsmiJornadaRevisar.Tag = "20"
         Me.tsmiJornadaRevisar.Text = "Revisar"
         '
         'tsmiJornadaModificar
         '
         Me.tsmiJornadaModificar.Name = "tsmiJornadaModificar"
-        Me.tsmiJornadaModificar.Size = New System.Drawing.Size(127, 22)
+        Me.tsmiJornadaModificar.Size = New System.Drawing.Size(161, 22)
         Me.tsmiJornadaModificar.Tag = "30"
         Me.tsmiJornadaModificar.Text = "Modificar"
         '
         'tsmiJornadaActualizar
         '
         Me.tsmiJornadaActualizar.Name = "tsmiJornadaActualizar"
-        Me.tsmiJornadaActualizar.Size = New System.Drawing.Size(127, 22)
+        Me.tsmiJornadaActualizar.Size = New System.Drawing.Size(161, 22)
         Me.tsmiJornadaActualizar.Tag = "40"
-        Me.tsmiJornadaActualizar.Text = "Actualizar"
+        Me.tsmiJornadaActualizar.Text = "Eliminar Jornada"
         '
         'tsmiModificarDia
         '
@@ -183,6 +183,12 @@ Partial Class frmMdi
         Me.tsmiCambioDescanso.Name = "tsmiCambioDescanso"
         Me.tsmiCambioDescanso.Size = New System.Drawing.Size(185, 22)
         Me.tsmiCambioDescanso.Text = "Cambio de Descanso"
+        '
+        'tsmiEliminaIncidencia
+        '
+        Me.tsmiEliminaIncidencia.Name = "tsmiEliminaIncidencia"
+        Me.tsmiEliminaIncidencia.Size = New System.Drawing.Size(185, 22)
+        Me.tsmiEliminaIncidencia.Text = "Elimina Incidencia"
         '
         'tsmiVacaciones
         '
@@ -263,12 +269,6 @@ Partial Class frmMdi
         Me.tmrHora.Enabled = True
         Me.tmrHora.Interval = 1000
         '
-        'tsmiEliminaIncidencia
-        '
-        Me.tsmiEliminaIncidencia.Name = "tsmiEliminaIncidencia"
-        Me.tsmiEliminaIncidencia.Size = New System.Drawing.Size(185, 22)
-        Me.tsmiEliminaIncidencia.Text = "Elimina Incidencia"
-        '
         'tsMenuInf
         '
         Me.tsMenuInf.BackgroundImage = CType(resources.GetObject("tsMenuInf.BackgroundImage"), System.Drawing.Image)
@@ -301,15 +301,6 @@ Partial Class frmMdi
         Me.tslActualizando.Text = "ToolStripLabel1"
         Me.tslActualizando.Visible = False
         '
-        'tslVersion
-        '
-        Me.tslVersion.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.tslVersion.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tslVersion.ForeColor = System.Drawing.Color.White
-        Me.tslVersion.Name = "tslVersion"
-        Me.tslVersion.Size = New System.Drawing.Size(32, 22)
-        Me.tslVersion.Text = "Ver."
-        '
         'tslVer
         '
         Me.tslVer.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
@@ -318,6 +309,15 @@ Partial Class frmMdi
         Me.tslVer.Name = "tslVer"
         Me.tslVer.Size = New System.Drawing.Size(37, 22)
         Me.tslVer.Text = "1.0.0"
+        '
+        'tslVersion
+        '
+        Me.tslVersion.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.tslVersion.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tslVersion.ForeColor = System.Drawing.Color.White
+        Me.tslVersion.Name = "tslVersion"
+        Me.tslVersion.Size = New System.Drawing.Size(32, 22)
+        Me.tslVersion.Text = "Ver."
         '
         'frmMdi
         '

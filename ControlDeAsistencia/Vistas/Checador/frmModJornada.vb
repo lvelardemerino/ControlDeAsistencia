@@ -32,6 +32,19 @@ Public Class frmModJornada
 
     End Sub
 
+    Private Sub tsbGuardar_Click(sender As Object, e As EventArgs) Handles tsbGuardar.Click
+
+        Modifica()
+        Me.Close()
+
+    End Sub
+
+    Private Sub tsbNuevo_Click(sender As Object, e As EventArgs) Handles tsbNuevo.Click
+
+        Habilita()
+
+    End Sub
+
 #Region "FUNCIONES"
 
     Private Sub Configura()
@@ -173,12 +186,6 @@ Public Class frmModJornada
 
     End Sub
 
-    Private Sub tsbNuevo_Click(sender As Object, e As EventArgs) Handles tsbNuevo.Click
-
-        Habilita()
-
-    End Sub
-
     Private Sub Modifica()
 
         Dim cnObj As New MySqlConnection
@@ -210,13 +217,6 @@ Public Class frmModJornada
         Next
 
         cnObj.Close()
-
-    End Sub
-
-    Private Sub tsbGuardar_Click(sender As Object, e As EventArgs) Handles tsbGuardar.Click
-
-        Modifica()
-        Me.Close()
 
     End Sub
 

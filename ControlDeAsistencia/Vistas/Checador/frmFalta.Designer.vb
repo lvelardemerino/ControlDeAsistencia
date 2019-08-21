@@ -33,6 +33,8 @@ Partial Class frmFalta
         Me.lblObservaciones = New System.Windows.Forms.Label()
         Me.dtpFecha = New System.Windows.Forms.DateTimePicker()
         Me.lblFecha = New System.Windows.Forms.Label()
+        Me.cmbFalta = New System.Windows.Forms.ComboBox()
+        Me.lblFalta = New System.Windows.Forms.Label()
         Me.tsMenu.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -93,7 +95,7 @@ Partial Class frmFalta
         '
         'txtObservaciones
         '
-        Me.txtObservaciones.Location = New System.Drawing.Point(99, 148)
+        Me.txtObservaciones.Location = New System.Drawing.Point(99, 179)
         Me.txtObservaciones.Multiline = True
         Me.txtObservaciones.Name = "txtObservaciones"
         Me.txtObservaciones.Size = New System.Drawing.Size(139, 55)
@@ -102,7 +104,7 @@ Partial Class frmFalta
         'lblObservaciones
         '
         Me.lblObservaciones.AutoSize = True
-        Me.lblObservaciones.Location = New System.Drawing.Point(12, 151)
+        Me.lblObservaciones.Location = New System.Drawing.Point(12, 182)
         Me.lblObservaciones.Name = "lblObservaciones"
         Me.lblObservaciones.Size = New System.Drawing.Size(81, 13)
         Me.lblObservaciones.TabIndex = 14
@@ -111,7 +113,7 @@ Partial Class frmFalta
         'dtpFecha
         '
         Me.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFecha.Location = New System.Drawing.Point(74, 229)
+        Me.dtpFecha.Location = New System.Drawing.Point(74, 260)
         Me.dtpFecha.Name = "dtpFecha"
         Me.dtpFecha.Size = New System.Drawing.Size(109, 20)
         Me.dtpFecha.TabIndex = 13
@@ -119,17 +121,38 @@ Partial Class frmFalta
         'lblFecha
         '
         Me.lblFecha.AutoSize = True
-        Me.lblFecha.Location = New System.Drawing.Point(12, 235)
+        Me.lblFecha.Location = New System.Drawing.Point(12, 266)
         Me.lblFecha.Name = "lblFecha"
         Me.lblFecha.Size = New System.Drawing.Size(40, 13)
         Me.lblFecha.TabIndex = 12
         Me.lblFecha.Text = "Fecha:"
+        '
+        'cmbFalta
+        '
+        Me.cmbFalta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbFalta.FormattingEnabled = True
+        Me.cmbFalta.Items.AddRange(New Object() {"FALTA", "FALTA AUTORIZADA"})
+        Me.cmbFalta.Location = New System.Drawing.Point(74, 137)
+        Me.cmbFalta.Name = "cmbFalta"
+        Me.cmbFalta.Size = New System.Drawing.Size(164, 21)
+        Me.cmbFalta.TabIndex = 17
+        '
+        'lblFalta
+        '
+        Me.lblFalta.AutoSize = True
+        Me.lblFalta.Location = New System.Drawing.Point(12, 140)
+        Me.lblFalta.Name = "lblFalta"
+        Me.lblFalta.Size = New System.Drawing.Size(31, 13)
+        Me.lblFalta.TabIndex = 16
+        Me.lblFalta.Text = "Tipo:"
         '
         'frmFalta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(261, 307)
+        Me.Controls.Add(Me.cmbFalta)
+        Me.Controls.Add(Me.lblFalta)
         Me.Controls.Add(Me.txtObservaciones)
         Me.Controls.Add(Me.lblObservaciones)
         Me.Controls.Add(Me.dtpFecha)
@@ -162,4 +185,6 @@ Partial Class frmFalta
     Friend WithEvents lblObservaciones As System.Windows.Forms.Label
     Friend WithEvents dtpFecha As System.Windows.Forms.DateTimePicker
     Friend WithEvents lblFecha As System.Windows.Forms.Label
+    Friend WithEvents cmbFalta As ComboBox
+    Friend WithEvents lblFalta As Label
 End Class

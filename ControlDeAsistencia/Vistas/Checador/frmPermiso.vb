@@ -105,7 +105,6 @@ Public Class frmPermiso
 
                 If Valida(cmbEmpleado.SelectedValue, Format(dtpFecha.Value, "yyyyMMdd"), "ENTRADA TARDE") = False Then
 
-
                     If txtHora.Text <> "" Then
 
                         strSql = "INSERT "
