@@ -332,7 +332,6 @@ Public Class frmAsistencia
 
                             Case "CAMBIO DESCANSO"
                                 fgJornada.SetData(fgJornada.Rows.Count - 1, 15, "CAMBIO DESCANSO")
-
                         End Select
 
                     Else
@@ -398,13 +397,14 @@ Public Class frmAsistencia
 
     Private Sub CambioDescanso()
 
+        Dim tempFecha, tempEntrada, tempSalida As String
+
+
         Dim cnObj As New MySqlConnection
         cnObj = conectar()
 
         Dim cmdObj As New MySqlCommand
         cmdObj.Connection = cnObj
-
-        Dim rdrObj As MySqlDataReader
 
         Dim strSql As String
 
@@ -414,79 +414,109 @@ Public Class frmAsistencia
         Dim cmdOtr As New MySqlCommand
         cmdOtr.Connection = cnOtr
 
-        Dim rdrOtr As MySqlDataReader
-
         Dim strOtr As String
 
         'DIA QUE VA A TRABAJAR
         For i As Integer = 1 To fgJornada.Rows.Count - 1
 
             strSql = "SELECT "
+            strSql += "tipo, "
+            strSql += "DATE_FORMAT(fecha, '%Y-%m-%d') AS fecha, "
             strSql += "DATE_FORMAT(fecha_cambio, '%Y-%m-%d') AS fechaCambio "
             strSql += "FROM "
             strSql += "incidencias "
             strSql += "WHERE "
-            strSql += "fecha = '" & Format(fgJornada.GetData(i, 1), "yyyyMMdd") & "' AND "
             strSql += "clave = '" & cmbEmpleado.SelectedValue & "' AND "
-            strSql += "tipo = 'CAMBIO DESCANSO'"
+            strSql += "fecha = '" & Format(fgJornada.GetData(i, 1), "yyyyMMdd") & "'"
 
             cmdObj.CommandText = strSql
+            Dim rdrObj As MySqlDataReader
             rdrObj = cmdObj.ExecuteReader
 
-            If rdrObj.HasRows = True Then
+            While rdrObj.Read
 
-                While rdrObj.Read
+                If rdrObj.Item("tipo") = "CAMBIO DESCANSO" Then
 
                     strOtr = "SELECT "
+                    strOtr += "DATE_FORMAT(fecha, '%Y-%m-%d') AS fecha, "
                     strOtr += "entrada, "
                     strOtr += "salida "
                     strOtr += "FROM "
                     strOtr += "jornada_empleado "
                     strOtr += "WHERE "
-                    strOtr += "fecha = '" & rdrObj.Item("fechaCambio") & "' AND "
-                    strOtr += "clave = '" & cmbEmpleado.SelectedValue & "'"
+                    strOtr += "clave = '" & cmbEmpleado.SelectedValue & "' AND "
+                    strOtr += "fecha = '" & rdrObj(1).ToString & "'"
 
                     cmdOtr.CommandText = strOtr
+                    Dim rdrOtr As MySqlDataReader
                     rdrOtr = cmdOtr.ExecuteReader
 
                     While rdrOtr.Read
 
-                        fgJornada.SetData(i, 3, rdrOtr(0).ToString)
-                        fgJornada.SetData(i, 8, rdrOtr(1).ToString)
+                        tempFecha = rdrOtr(0).ToString
+                        tempEntrada = rdrOtr(1).ToString
+                        tempSalida = rdrOtr(2).ToString
 
                     End While
 
                     rdrOtr.Close()
 
-                End While
-              
-            End If
+                    fgJornada.SetData(i, 3, tempEntrada)
+                    fgJornada.SetData(i, 8, tempSalida)
+
+                End If
+
+            End While
 
             rdrObj.Close()
 
         Next
 
+
         'DIA QUE VA A DESCANSAR
         For i As Integer = 1 To fgJornada.Rows.Count - 1
 
             strSql = "SELECT "
-            strSql += "DATE_FORMAT(fecha, '%Y-%m-%d') AS fecha "
+            strSql += "tipo, "
+            strSql += "DATE_FORMAT(fecha_cambio, '%Y-%m-%d') AS fechaCambio "
             strSql += "FROM "
             strSql += "incidencias "
             strSql += "WHERE "
-            strSql += "fecha_cambio = '" & Format(fgJornada.GetData(i, 1), "yyyyMMdd") & "' AND "
             strSql += "clave = '" & cmbEmpleado.SelectedValue & "' AND "
-            strSql += "tipo = 'CAMBIO DESCANSO'"
+            strSql += "fecha_cambio = '" & Format(fgJornada.GetData(i, 1), "yyyyMMdd") & "'"
 
             cmdObj.CommandText = strSql
+            Dim rdrObj As MySqlDataReader
             rdrObj = cmdObj.ExecuteReader
 
-            If rdrObj.HasRows = True Then
+            While rdrObj.Read
 
-                fgJornada.SetData(i, 15, "DESCANSO")
+                If rdrObj.Item("tipo") = "CAMBIO DESCANSO" Then
 
-            End If
+                    fgJornada.SetData(i, 3, "")
+                    fgJornada.SetData(i, 8, "")
 
+                    Dim crRegistro As New C1.Win.C1FlexGrid.CellRange
+
+                    crRegistro = fgJornada.GetCellRange(i, 4)
+                    crRegistro.Style = fgJornada.Styles("FirstCustomStyle")
+
+                    crRegistro = fgJornada.GetCellRange(i, 5)
+                    crRegistro.Style = fgJornada.Styles("FirstCustomStyle")
+
+                    crRegistro = fgJornada.GetCellRange(i, 6)
+                    crRegistro.Style = fgJornada.Styles("FirstCustomStyle")
+
+                    crRegistro = fgJornada.GetCellRange(i, 7)
+                    crRegistro.Style = fgJornada.Styles("FirstCustomStyle")
+
+                    fgJornada.SetData(i, 15, "CAMBIO DESCANSO")
+
+                End If
+
+            End While
+
+            fgJornada.AutoSizeCols()
             rdrObj.Close()
 
         Next
@@ -836,6 +866,11 @@ Public Class frmAsistencia
                                     Dim crRegistro As New C1.Win.C1FlexGrid.CellRange
                                     crRegistro = fgJornada.GetCellRange(i, 11)
                                     crRegistro.Style = fgJornada.Styles("CustomStyle4")
+
+                                    If fgJornada.GetData(i, 11) <> "" Then
+                                        TiempoTemp += ConvierteHoraNumero(fgJornada.GetData(i, 11))
+                                    End If
+
                                     fgJornada.SetData(i, 11, ConvierteNumeroHora(TiempoTemp))
 
                                     difTiempoFavor += TiempoTemp
@@ -849,6 +884,11 @@ Public Class frmAsistencia
                                     Dim crRegistro As New C1.Win.C1FlexGrid.CellRange
                                     crRegistro = fgJornada.GetCellRange(i, 11)
                                     crRegistro.Style = fgJornada.Styles("CustomStyle4")
+
+                                    If fgJornada.GetData(i, 11) <> "" Then
+                                        TiempoTemp += ConvierteHoraNumero(fgJornada.GetData(i, 11))
+                                    End If
+
                                     fgJornada.SetData(i, 11, ConvierteNumeroHora(TiempoTemp))
 
                                     difTiempoFavor += TiempoTemp
@@ -863,6 +903,11 @@ Public Class frmAsistencia
                                     Dim crRegistro As New C1.Win.C1FlexGrid.CellRange
                                     crRegistro = fgJornada.GetCellRange(i, 12)
                                     crRegistro.Style = fgJornada.Styles("CustomStyle4")
+
+                                    If fgJornada.GetData(i, 12) <> "" Then
+                                        TiempoTemp += ConvierteHoraNumero(fgJornada.GetData(i, 12))
+                                    End If
+
                                     fgJornada.SetData(i, 12, ConvierteNumeroHora(TiempoTemp))
 
                                     difTiempoFavor += TiempoTemp
@@ -875,6 +920,11 @@ Public Class frmAsistencia
                                     Dim crRegistro As New C1.Win.C1FlexGrid.CellRange
                                     crRegistro = fgJornada.GetCellRange(i, 12)
                                     crRegistro.Style = fgJornada.Styles("CustomStyle4")
+
+                                    If fgJornada.GetData(i, 12) <> "" Then
+                                        TiempoTemp += ConvierteHoraNumero(fgJornada.GetData(i, 12))
+                                    End If
+
                                     fgJornada.SetData(i, 12, ConvierteNumeroHora(TiempoTemp))
 
                                     difTiempoFavor += TiempoTemp
@@ -889,6 +939,11 @@ Public Class frmAsistencia
                                     Dim crRegistro As New C1.Win.C1FlexGrid.CellRange
                                     crRegistro = fgJornada.GetCellRange(i, 10)
                                     crRegistro.Style = fgJornada.Styles("CustomStyle5")
+
+                                    If fgJornada.GetData(i, 10) <> "" Then
+                                        TiempoTemp += ConvierteHoraNumero(fgJornada.GetData(i, 10))
+                                    End If
+
                                     fgJornada.SetData(i, 10, ConvierteNumeroHora(TiempoTemp))
 
                                     difTiempoContra += TiempoTemp
@@ -896,11 +951,20 @@ Public Class frmAsistencia
                                 Else
                                     Dim Tiempo As DateTime
                                     Tiempo = rdrObj(1).ToString
+
+                                    'Revisamos si no llego tarde (Por Confirmar)
+
+
                                     TiempoTemp = DateDiff("n", fgJornada.GetData(i, 3), Tiempo)
 
                                     Dim crRegistro As New C1.Win.C1FlexGrid.CellRange
                                     crRegistro = fgJornada.GetCellRange(i, 10)
                                     crRegistro.Style = fgJornada.Styles("CustomStyle5")
+
+                                    If fgJornada.GetData(i, 10) <> "" Then
+                                        TiempoTemp += ConvierteHoraNumero(fgJornada.GetData(i, 10))
+                                    End If
+
                                     fgJornada.SetData(i, 10, ConvierteNumeroHora(TiempoTemp))
 
                                     difTiempoContra += TiempoTemp
@@ -915,6 +979,11 @@ Public Class frmAsistencia
                                     Dim crRegistro As New C1.Win.C1FlexGrid.CellRange
                                     crRegistro = fgJornada.GetCellRange(i, 13)
                                     crRegistro.Style = fgJornada.Styles("CustomStyle5")
+
+                                    If fgJornada.GetData(i, 13) <> "" Then
+                                        TiempoTemp += ConvierteHoraNumero(fgJornada.GetData(i, 13))
+                                    End If
+
                                     fgJornada.SetData(i, 13, ConvierteNumeroHora(TiempoTemp))
 
                                     difTiempoContra += TiempoTemp
@@ -928,6 +997,11 @@ Public Class frmAsistencia
                                     Dim crRegistro As New C1.Win.C1FlexGrid.CellRange
                                     crRegistro = fgJornada.GetCellRange(i, 13)
                                     crRegistro.Style = fgJornada.Styles("CustomStyle5")
+
+                                    If fgJornada.GetData(i, 13) <> "" Then
+                                        TiempoTemp += ConvierteHoraNumero(fgJornada.GetData(i, 13))
+                                    End If
+
                                     fgJornada.SetData(i, 13, ConvierteNumeroHora(TiempoTemp))
 
                                     difTiempoContra += TiempoTemp
@@ -954,7 +1028,68 @@ Public Class frmAsistencia
 
                                 End If
 
+                            Case "PERMISO PERSONAL"
+
+                                TiempoTemp = DateDiff("n", rdrObj(1).ToString, rdrObj(2).ToString)
+
+                                If TiempoTemp > 0 Then
+
+                                    'Dim crRegistro As New C1.Win.C1FlexGrid.CellRange
+                                    'crRegistro = fgJornada.GetCellRange(i, 4)
+                                    'crRegistro.Style = fgJornada.Styles("CustomStyle5")
+
+                                    'If fgJornada.GetData(i, 10) <> "" Then
+                                    '    TiempoTemp += ConvierteHoraNumero(fgJornada.GetData(i, 10))
+                                    'End If
+
+                                    'fgJornada.SetData(i, 10, ConvierteNumeroHora(TiempoTemp))
+
+                                    difTiempoContra += TiempoTemp
+
+                                End If
+
                             Case Else
+
+                                If fgJornada.GetData(i, 3) <> "" And fgJornada.GetData(i, 8) <> "" Then
+
+                                    'Diferencia de tiempo en la entrada
+                                    If fgJornada.GetData(i, 3) <> "" And fgJornada.GetData(i, 4) <> "" Then
+
+                                        TiempoTemp = DateDiff("n", fgJornada.GetData(i, 3), fgJornada.GetData(i, 4))
+
+                                        If TiempoTemp > 0 Then
+
+                                            Dim crRegistro As New C1.Win.C1FlexGrid.CellRange
+                                            crRegistro = fgJornada.GetCellRange(i, 4)
+                                            crRegistro.Style = fgJornada.Styles("CustomStyle5")
+                                            fgJornada.SetData(i, 10, ConvierteNumeroHora(TiempoTemp))
+
+                                            difTiempoContra += TiempoTemp
+
+                                            numRetardos += 1
+
+                                        End If
+
+                                    End If
+
+                                    If fgJornada.GetData(i, 7) <> "" And fgJornada.GetData(i, 8) <> "" Then
+
+                                        TiempoTemp = DateDiff("n", fgJornada.GetData(i, 7), fgJornada.GetData(i, 8))
+
+                                        If TiempoTemp > 0 Then
+
+                                            Dim crRegistro As New C1.Win.C1FlexGrid.CellRange
+                                            crRegistro = fgJornada.GetCellRange(i, 7)
+                                            crRegistro.Style = fgJornada.Styles("CustomStyle5")
+                                            fgJornada.SetData(i, 13, ConvierteNumeroHora(TiempoTemp))
+
+                                            difTiempoContra += TiempoTemp
+
+                                        End If
+
+                                    End If
+
+                                End If
 
                         End Select
 
@@ -1151,6 +1286,21 @@ Public Class frmAsistencia
         Else
             Valor = Valor & ":" & CStr(Minuto)
         End If
+
+        Return Valor
+
+    End Function
+
+    Private Function ConvierteHoraNumero(ByVal Hora As String) As Integer
+
+        Dim Valor As Integer = 0
+
+        Dim tempHora, tempMin As Integer
+
+        tempHora = Mid(Hora, 1, 2)
+        tempMin = Mid(Hora, 4, 5)
+
+        Valor = (tempHora * 60) + tempMin
 
         Return Valor
 

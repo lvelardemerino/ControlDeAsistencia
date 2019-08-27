@@ -89,14 +89,13 @@ C:\Users\LuisAlberto\Source\Repos\ControldeAsistencia\ControlDeAsistencia\obj\De
 C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\bin\Debug\ControlDeAsistencia.exe
 C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\bin\Debug\ControlDeAsistencia.pdb
 C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\bin\Debug\ControlDeAsistencia.xml
-C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\bin\Debug\C1.Win.C1FlexGrid.4.dll
 C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\bin\Debug\DPFPCtlXWrapperNET.dll
 C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\bin\Debug\DPFPDevNET.dll
 C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\bin\Debug\DPFPEngNET.dll
 C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\bin\Debug\DPFPGuiNET.dll
 C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\bin\Debug\DPFPShrNET.dll
 C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\bin\Debug\DPFPVerNET.dll
-C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\bin\Debug\C1.Win.C1FlexGrid.4.xml
+C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.vbprojResolveAssemblyReference.cache
 C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmMdi.resources
 C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.Resources.resources
 C:\Users\Luis Alberto\Source\Repos\ControlDeAsistencia\ControlDeAsistencia\obj\Debug\ControlDeAsistencia.frmArea.resources
