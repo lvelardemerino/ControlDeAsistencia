@@ -445,7 +445,7 @@ Public Class frmAsistencia
                     strOtr += "jornada_empleado "
                     strOtr += "WHERE "
                     strOtr += "clave = '" & cmbEmpleado.SelectedValue & "' AND "
-                    strOtr += "fecha = '" & rdrObj(1).ToString & "'"
+                    strOtr += "fecha = '" & rdrObj(2).ToString & "'"
 
                     cmdOtr.CommandText = strOtr
                     Dim rdrOtr As MySqlDataReader
@@ -949,16 +949,14 @@ Public Class frmAsistencia
                                     difTiempoContra += TiempoTemp
 
                                 Else
+
                                     Dim Tiempo As DateTime
                                     Tiempo = rdrObj(1).ToString
-
-                                    'Revisamos si no llego tarde (Por Confirmar)
-
 
                                     TiempoTemp = DateDiff("n", fgJornada.GetData(i, 3), Tiempo)
 
                                     Dim crRegistro As New C1.Win.C1FlexGrid.CellRange
-                                    crRegistro = fgJornada.GetCellRange(i, 10)
+                                    crRegistro = fgJornada.GetCellRange(i, 4)
                                     crRegistro.Style = fgJornada.Styles("CustomStyle5")
 
                                     If fgJornada.GetData(i, 10) <> "" Then
@@ -966,7 +964,7 @@ Public Class frmAsistencia
                                     End If
 
                                     fgJornada.SetData(i, 10, ConvierteNumeroHora(TiempoTemp))
-
+                                    fgJornada.SetData(i, 15, "ENTRADA TARDE")
                                     difTiempoContra += TiempoTemp
 
                                 End If
