@@ -26,18 +26,20 @@ Partial Class frmPermiso
         Me.tsMenu = New System.Windows.Forms.ToolStrip()
         Me.tsbGuardar = New System.Windows.Forms.ToolStripButton()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.lblConcepto = New System.Windows.Forms.Label()
-        Me.cmbConcepto = New System.Windows.Forms.ComboBox()
-        Me.lblSucursal = New System.Windows.Forms.Label()
-        Me.cmbSucursal = New System.Windows.Forms.ComboBox()
-        Me.cmbEmpleado = New System.Windows.Forms.ComboBox()
-        Me.lblEmpleado = New System.Windows.Forms.Label()
-        Me.lblFecha = New System.Windows.Forms.Label()
-        Me.dtpFecha = New System.Windows.Forms.DateTimePicker()
-        Me.lblHora = New System.Windows.Forms.Label()
-        Me.txtHora = New System.Windows.Forms.TextBox()
         Me.txtObservaciones = New System.Windows.Forms.TextBox()
         Me.lblObservaciones = New System.Windows.Forms.Label()
+        Me.txtHora = New System.Windows.Forms.TextBox()
+        Me.lblHora = New System.Windows.Forms.Label()
+        Me.dtpFecha = New System.Windows.Forms.DateTimePicker()
+        Me.lblFecha = New System.Windows.Forms.Label()
+        Me.cmbEmpleado = New System.Windows.Forms.ComboBox()
+        Me.lblEmpleado = New System.Windows.Forms.Label()
+        Me.cmbSucursal = New System.Windows.Forms.ComboBox()
+        Me.lblSucursal = New System.Windows.Forms.Label()
+        Me.cmbConcepto = New System.Windows.Forms.ComboBox()
+        Me.lblConcepto = New System.Windows.Forms.Label()
+        Me.txtSalida = New System.Windows.Forms.TextBox()
+        Me.lblSalida = New System.Windows.Forms.Label()
         Me.tsMenu.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -63,6 +65,8 @@ Partial Class frmPermiso
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.txtSalida)
+        Me.Panel1.Controls.Add(Me.lblSalida)
         Me.Panel1.Controls.Add(Me.txtObservaciones)
         Me.Panel1.Controls.Add(Me.lblObservaciones)
         Me.Panel1.Controls.Add(Me.txtHora)
@@ -77,45 +81,58 @@ Partial Class frmPermiso
         Me.Panel1.Controls.Add(Me.lblConcepto)
         Me.Panel1.Location = New System.Drawing.Point(0, 28)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(258, 277)
+        Me.Panel1.Size = New System.Drawing.Size(258, 310)
         Me.Panel1.TabIndex = 1
         '
-        'lblConcepto
+        'txtObservaciones
         '
-        Me.lblConcepto.AutoSize = True
-        Me.lblConcepto.Location = New System.Drawing.Point(12, 23)
-        Me.lblConcepto.Name = "lblConcepto"
-        Me.lblConcepto.Size = New System.Drawing.Size(56, 13)
-        Me.lblConcepto.TabIndex = 0
-        Me.lblConcepto.Text = "Concepto:"
+        Me.txtObservaciones.Location = New System.Drawing.Point(89, 149)
+        Me.txtObservaciones.Multiline = True
+        Me.txtObservaciones.Name = "txtObservaciones"
+        Me.txtObservaciones.Size = New System.Drawing.Size(149, 41)
+        Me.txtObservaciones.TabIndex = 11
         '
-        'cmbConcepto
+        'lblObservaciones
         '
-        Me.cmbConcepto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbConcepto.FormattingEnabled = True
-        Me.cmbConcepto.Items.AddRange(New Object() {"ENTRADA TEMPRANO", "ENTRADA TARDE", "SALIDA TEMPRANO", "SALIDA TARDE"})
-        Me.cmbConcepto.Location = New System.Drawing.Point(74, 20)
-        Me.cmbConcepto.Name = "cmbConcepto"
-        Me.cmbConcepto.Size = New System.Drawing.Size(164, 21)
-        Me.cmbConcepto.TabIndex = 1
+        Me.lblObservaciones.AutoSize = True
+        Me.lblObservaciones.Location = New System.Drawing.Point(12, 152)
+        Me.lblObservaciones.Name = "lblObservaciones"
+        Me.lblObservaciones.Size = New System.Drawing.Size(81, 13)
+        Me.lblObservaciones.TabIndex = 10
+        Me.lblObservaciones.Text = "Observaciones:"
         '
-        'lblSucursal
+        'txtHora
         '
-        Me.lblSucursal.AutoSize = True
-        Me.lblSucursal.Location = New System.Drawing.Point(12, 66)
-        Me.lblSucursal.Name = "lblSucursal"
-        Me.lblSucursal.Size = New System.Drawing.Size(51, 13)
-        Me.lblSucursal.TabIndex = 2
-        Me.lblSucursal.Text = "Sucursal:"
+        Me.txtHora.Location = New System.Drawing.Point(74, 244)
+        Me.txtHora.Name = "txtHora"
+        Me.txtHora.Size = New System.Drawing.Size(85, 20)
+        Me.txtHora.TabIndex = 9
         '
-        'cmbSucursal
+        'lblHora
         '
-        Me.cmbSucursal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbSucursal.FormattingEnabled = True
-        Me.cmbSucursal.Location = New System.Drawing.Point(74, 63)
-        Me.cmbSucursal.Name = "cmbSucursal"
-        Me.cmbSucursal.Size = New System.Drawing.Size(164, 21)
-        Me.cmbSucursal.TabIndex = 3
+        Me.lblHora.AutoSize = True
+        Me.lblHora.Location = New System.Drawing.Point(12, 247)
+        Me.lblHora.Name = "lblHora"
+        Me.lblHora.Size = New System.Drawing.Size(33, 13)
+        Me.lblHora.TabIndex = 8
+        Me.lblHora.Text = "Hora:"
+        '
+        'dtpFecha
+        '
+        Me.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpFecha.Location = New System.Drawing.Point(74, 208)
+        Me.dtpFecha.Name = "dtpFecha"
+        Me.dtpFecha.Size = New System.Drawing.Size(109, 20)
+        Me.dtpFecha.TabIndex = 7
+        '
+        'lblFecha
+        '
+        Me.lblFecha.AutoSize = True
+        Me.lblFecha.Location = New System.Drawing.Point(12, 214)
+        Me.lblFecha.Name = "lblFecha"
+        Me.lblFecha.Size = New System.Drawing.Size(40, 13)
+        Me.lblFecha.TabIndex = 6
+        Me.lblFecha.Text = "Fecha:"
         '
         'cmbEmpleado
         '
@@ -135,61 +152,66 @@ Partial Class frmPermiso
         Me.lblEmpleado.TabIndex = 4
         Me.lblEmpleado.Text = "Empleado:"
         '
-        'lblFecha
+        'cmbSucursal
         '
-        Me.lblFecha.AutoSize = True
-        Me.lblFecha.Location = New System.Drawing.Point(12, 214)
-        Me.lblFecha.Name = "lblFecha"
-        Me.lblFecha.Size = New System.Drawing.Size(40, 13)
-        Me.lblFecha.TabIndex = 6
-        Me.lblFecha.Text = "Fecha:"
+        Me.cmbSucursal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbSucursal.FormattingEnabled = True
+        Me.cmbSucursal.Location = New System.Drawing.Point(74, 63)
+        Me.cmbSucursal.Name = "cmbSucursal"
+        Me.cmbSucursal.Size = New System.Drawing.Size(164, 21)
+        Me.cmbSucursal.TabIndex = 3
         '
-        'dtpFecha
+        'lblSucursal
         '
-        Me.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFecha.Location = New System.Drawing.Point(74, 208)
-        Me.dtpFecha.Name = "dtpFecha"
-        Me.dtpFecha.Size = New System.Drawing.Size(109, 20)
-        Me.dtpFecha.TabIndex = 7
+        Me.lblSucursal.AutoSize = True
+        Me.lblSucursal.Location = New System.Drawing.Point(12, 66)
+        Me.lblSucursal.Name = "lblSucursal"
+        Me.lblSucursal.Size = New System.Drawing.Size(51, 13)
+        Me.lblSucursal.TabIndex = 2
+        Me.lblSucursal.Text = "Sucursal:"
         '
-        'lblHora
+        'cmbConcepto
         '
-        Me.lblHora.AutoSize = True
-        Me.lblHora.Location = New System.Drawing.Point(12, 247)
-        Me.lblHora.Name = "lblHora"
-        Me.lblHora.Size = New System.Drawing.Size(33, 13)
-        Me.lblHora.TabIndex = 8
-        Me.lblHora.Text = "Hora:"
+        Me.cmbConcepto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbConcepto.FormattingEnabled = True
+        Me.cmbConcepto.Items.AddRange(New Object() {"ENTRADA TEMPRANO", "ENTRADA TARDE", "SALIDA TEMPRANO", "SALIDA TARDE", "PAGO DE TIEMPO"})
+        Me.cmbConcepto.Location = New System.Drawing.Point(74, 20)
+        Me.cmbConcepto.Name = "cmbConcepto"
+        Me.cmbConcepto.Size = New System.Drawing.Size(164, 21)
+        Me.cmbConcepto.TabIndex = 1
         '
-        'txtHora
+        'lblConcepto
         '
-        Me.txtHora.Location = New System.Drawing.Point(74, 244)
-        Me.txtHora.Name = "txtHora"
-        Me.txtHora.Size = New System.Drawing.Size(85, 20)
-        Me.txtHora.TabIndex = 9
+        Me.lblConcepto.AutoSize = True
+        Me.lblConcepto.Location = New System.Drawing.Point(12, 23)
+        Me.lblConcepto.Name = "lblConcepto"
+        Me.lblConcepto.Size = New System.Drawing.Size(56, 13)
+        Me.lblConcepto.TabIndex = 0
+        Me.lblConcepto.Text = "Concepto:"
         '
-        'txtObservaciones
+        'txtSalida
         '
-        Me.txtObservaciones.Location = New System.Drawing.Point(89, 149)
-        Me.txtObservaciones.Multiline = True
-        Me.txtObservaciones.Name = "txtObservaciones"
-        Me.txtObservaciones.Size = New System.Drawing.Size(149, 41)
-        Me.txtObservaciones.TabIndex = 11
+        Me.txtSalida.Location = New System.Drawing.Point(75, 276)
+        Me.txtSalida.Name = "txtSalida"
+        Me.txtSalida.Size = New System.Drawing.Size(85, 20)
+        Me.txtSalida.TabIndex = 13
+        Me.txtSalida.Visible = False
         '
-        'lblObservaciones
+        'lblSalida
         '
-        Me.lblObservaciones.AutoSize = True
-        Me.lblObservaciones.Location = New System.Drawing.Point(12, 152)
-        Me.lblObservaciones.Name = "lblObservaciones"
-        Me.lblObservaciones.Size = New System.Drawing.Size(81, 13)
-        Me.lblObservaciones.TabIndex = 10
-        Me.lblObservaciones.Text = "Observaciones:"
+        Me.lblSalida.AutoSize = True
+        Me.lblSalida.Location = New System.Drawing.Point(13, 279)
+        Me.lblSalida.Name = "lblSalida"
+        Me.lblSalida.Size = New System.Drawing.Size(39, 13)
+        Me.lblSalida.TabIndex = 12
+        Me.lblSalida.Text = "Salida:"
+        Me.lblSalida.Visible = False
         '
         'frmPermiso
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(260, 305)
+        Me.ClientSize = New System.Drawing.Size(260, 338)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.tsMenu)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
@@ -222,4 +244,6 @@ Partial Class frmPermiso
     Friend WithEvents lblConcepto As System.Windows.Forms.Label
     Friend WithEvents txtObservaciones As System.Windows.Forms.TextBox
     Friend WithEvents lblObservaciones As System.Windows.Forms.Label
+    Friend WithEvents txtSalida As TextBox
+    Friend WithEvents lblSalida As Label
 End Class

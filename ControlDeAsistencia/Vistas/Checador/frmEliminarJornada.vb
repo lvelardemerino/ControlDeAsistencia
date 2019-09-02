@@ -93,6 +93,8 @@ Public Class frmEliminarJornada
 
     Private Sub BuscaJornada(ByVal Clave As Integer, ByVal FechaIni As String, ByVal FechaFin As String)
 
+        Configura()
+
         Dim cnObj As New MySqlConnection
         cnObj = conectar()
 
@@ -110,7 +112,7 @@ Public Class frmEliminarJornada
         strSql += "FROM "
         strSql += "jornada_empleado "
         strSql += "WHERE "
-        strSql += "clave = '" & Clave & "' AND "
+        strSql += "clave = " & Clave & " AND "
         strSql += "fecha BETWEEN '" & FechaIni & "' AND '" & FechaFin & "'"
 
         cmdObj.CommandText = strSql

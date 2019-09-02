@@ -23,12 +23,10 @@ Partial Class frmAsistencia
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmAsistencia))
-        Me.tsMenu = New System.Windows.Forms.ToolStrip()
-        Me.tsbImprimir = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.tslEmpleado = New System.Windows.Forms.ToolStripLabel()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.lblFal = New System.Windows.Forms.Label()
+        Me.lblFaltas = New System.Windows.Forms.Label()
         Me.lblTotalMes = New System.Windows.Forms.Label()
         Me.lblMesAnterior = New System.Windows.Forms.Label()
         Me.lblTiempoContra = New System.Windows.Forms.Label()
@@ -52,23 +50,26 @@ Partial Class frmAsistencia
         Me.cmbSucursal = New System.Windows.Forms.ComboBox()
         Me.lblSucursal = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.lblComida = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.lblContra = New System.Windows.Forms.Label()
-        Me.pbFavor = New System.Windows.Forms.PictureBox()
         Me.lblFavor = New System.Windows.Forms.Label()
-        Me.pbSinRegistro = New System.Windows.Forms.PictureBox()
         Me.lblSinRegistro = New System.Windows.Forms.Label()
-        Me.pbFalta = New System.Windows.Forms.PictureBox()
         Me.lblFalta = New System.Windows.Forms.Label()
         Me.lblConceptos = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.fgJornada = New C1.Win.C1FlexGrid.C1FlexGrid()
         Me.pdReporte = New System.Drawing.Printing.PrintDocument()
-        Me.lblFaltas = New System.Windows.Forms.Label()
-        Me.lblFal = New System.Windows.Forms.Label()
-        Me.tsMenu.SuspendLayout()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.pbFavor = New System.Windows.Forms.PictureBox()
+        Me.pbSinRegistro = New System.Windows.Forms.PictureBox()
+        Me.pbFalta = New System.Windows.Forms.PictureBox()
+        Me.tsMenu = New System.Windows.Forms.ToolStrip()
+        Me.tsbImprimir = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.tsbIncidencias = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.tslEmpleado = New System.Windows.Forms.ToolStripLabel()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
@@ -76,47 +77,15 @@ Partial Class frmAsistencia
         Me.Panel2.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel4.SuspendLayout()
+        Me.Panel3.SuspendLayout()
+        CType(Me.fgJornada, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbFavor, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbSinRegistro, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbFalta, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel3.SuspendLayout()
-        CType(Me.fgJornada, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tsMenu.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'tsMenu
-        '
-        Me.tsMenu.BackgroundImage = CType(resources.GetObject("tsMenu.BackgroundImage"), System.Drawing.Image)
-        Me.tsMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsbImprimir, Me.ToolStripSeparator1, Me.tslEmpleado})
-        Me.tsMenu.Location = New System.Drawing.Point(0, 0)
-        Me.tsMenu.Name = "tsMenu"
-        Me.tsMenu.Size = New System.Drawing.Size(1332, 25)
-        Me.tsMenu.TabIndex = 0
-        Me.tsMenu.Text = "ToolStrip1"
-        '
-        'tsbImprimir
-        '
-        Me.tsbImprimir.ForeColor = System.Drawing.Color.White
-        Me.tsbImprimir.Image = CType(resources.GetObject("tsbImprimir.Image"), System.Drawing.Image)
-        Me.tsbImprimir.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.tsbImprimir.Name = "tsbImprimir"
-        Me.tsbImprimir.Size = New System.Drawing.Size(73, 22)
-        Me.tsbImprimir.Text = "Imprimir"
-        '
-        'ToolStripSeparator1
-        '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 25)
-        '
-        'tslEmpleado
-        '
-        Me.tslEmpleado.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.tslEmpleado.ForeColor = System.Drawing.Color.White
-        Me.tslEmpleado.Name = "tslEmpleado"
-        Me.tslEmpleado.Size = New System.Drawing.Size(129, 22)
-        Me.tslEmpleado.Text = "ToolStripLabel1"
-        Me.tslEmpleado.Visible = False
         '
         'SplitContainer1
         '
@@ -158,6 +127,25 @@ Partial Class frmAsistencia
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(247, 248)
         Me.Panel2.TabIndex = 1
+        '
+        'lblFal
+        '
+        Me.lblFal.AutoSize = True
+        Me.lblFal.Location = New System.Drawing.Point(142, 82)
+        Me.lblFal.Name = "lblFal"
+        Me.lblFal.Size = New System.Drawing.Size(39, 13)
+        Me.lblFal.TabIndex = 15
+        Me.lblFal.Text = "Label2"
+        Me.lblFal.Visible = False
+        '
+        'lblFaltas
+        '
+        Me.lblFaltas.AutoSize = True
+        Me.lblFaltas.Location = New System.Drawing.Point(7, 82)
+        Me.lblFaltas.Name = "lblFaltas"
+        Me.lblFaltas.Size = New System.Drawing.Size(38, 13)
+        Me.lblFaltas.TabIndex = 14
+        Me.lblFaltas.Text = "Faltas:"
         '
         'lblTotalMes
         '
@@ -387,15 +375,6 @@ Partial Class frmAsistencia
         Me.Panel4.Size = New System.Drawing.Size(1057, 44)
         Me.Panel4.TabIndex = 1
         '
-        'PictureBox2
-        '
-        Me.PictureBox2.BackColor = System.Drawing.Color.OrangeRed
-        Me.PictureBox2.Location = New System.Drawing.Point(686, 19)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(50, 17)
-        Me.PictureBox2.TabIndex = 10
-        Me.PictureBox2.TabStop = False
-        '
         'lblComida
         '
         Me.lblComida.AutoSize = True
@@ -404,15 +383,6 @@ Partial Class frmAsistencia
         Me.lblComida.Size = New System.Drawing.Size(65, 13)
         Me.lblComida.TabIndex = 9
         Me.lblComida.Text = "Ret. Comida"
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackColor = System.Drawing.Color.Orange
-        Me.PictureBox1.Location = New System.Drawing.Point(541, 18)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(50, 17)
-        Me.PictureBox1.TabIndex = 8
-        Me.PictureBox1.TabStop = False
         '
         'lblContra
         '
@@ -423,15 +393,6 @@ Partial Class frmAsistencia
         Me.lblContra.TabIndex = 7
         Me.lblContra.Text = "Tiempo en Contra"
         '
-        'pbFavor
-        '
-        Me.pbFavor.BackColor = System.Drawing.Color.LightGreen
-        Me.pbFavor.Location = New System.Drawing.Point(387, 18)
-        Me.pbFavor.Name = "pbFavor"
-        Me.pbFavor.Size = New System.Drawing.Size(50, 17)
-        Me.pbFavor.TabIndex = 6
-        Me.pbFavor.TabStop = False
-        '
         'lblFavor
         '
         Me.lblFavor.AutoSize = True
@@ -441,15 +402,6 @@ Partial Class frmAsistencia
         Me.lblFavor.TabIndex = 5
         Me.lblFavor.Text = "Tiempo a Favor"
         '
-        'pbSinRegistro
-        '
-        Me.pbSinRegistro.BackColor = System.Drawing.Color.Yellow
-        Me.pbSinRegistro.Location = New System.Drawing.Point(237, 19)
-        Me.pbSinRegistro.Name = "pbSinRegistro"
-        Me.pbSinRegistro.Size = New System.Drawing.Size(50, 17)
-        Me.pbSinRegistro.TabIndex = 4
-        Me.pbSinRegistro.TabStop = False
-        '
         'lblSinRegistro
         '
         Me.lblSinRegistro.AutoSize = True
@@ -458,15 +410,6 @@ Partial Class frmAsistencia
         Me.lblSinRegistro.Size = New System.Drawing.Size(64, 13)
         Me.lblSinRegistro.TabIndex = 3
         Me.lblSinRegistro.Text = "Sin Registro"
-        '
-        'pbFalta
-        '
-        Me.pbFalta.BackColor = System.Drawing.Color.Red
-        Me.pbFalta.Location = New System.Drawing.Point(106, 20)
-        Me.pbFalta.Name = "pbFalta"
-        Me.pbFalta.Size = New System.Drawing.Size(50, 17)
-        Me.pbFalta.TabIndex = 2
-        Me.pbFalta.TabStop = False
         '
         'lblFalta
         '
@@ -499,7 +442,6 @@ Partial Class frmAsistencia
         Me.fgJornada.AllowDragging = C1.Win.C1FlexGrid.AllowDraggingEnum.None
         Me.fgJornada.AllowEditing = False
         Me.fgJornada.ColumnInfo = "10,1,0,0,0,95,Columns:"
-        Me.fgJornada.Dock = System.Windows.Forms.DockStyle.Fill
         Me.fgJornada.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.fgJornada.Location = New System.Drawing.Point(0, 0)
         Me.fgJornada.Name = "fgJornada"
@@ -511,24 +453,97 @@ Partial Class frmAsistencia
         'pdReporte
         '
         '
-        'lblFaltas
+        'PictureBox2
         '
-        Me.lblFaltas.AutoSize = True
-        Me.lblFaltas.Location = New System.Drawing.Point(7, 82)
-        Me.lblFaltas.Name = "lblFaltas"
-        Me.lblFaltas.Size = New System.Drawing.Size(38, 13)
-        Me.lblFaltas.TabIndex = 14
-        Me.lblFaltas.Text = "Faltas:"
+        Me.PictureBox2.BackColor = System.Drawing.Color.OrangeRed
+        Me.PictureBox2.Location = New System.Drawing.Point(686, 19)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(50, 17)
+        Me.PictureBox2.TabIndex = 10
+        Me.PictureBox2.TabStop = False
         '
-        'lblFal
+        'PictureBox1
         '
-        Me.lblFal.AutoSize = True
-        Me.lblFal.Location = New System.Drawing.Point(142, 82)
-        Me.lblFal.Name = "lblFal"
-        Me.lblFal.Size = New System.Drawing.Size(39, 13)
-        Me.lblFal.TabIndex = 15
-        Me.lblFal.Text = "Label2"
-        Me.lblFal.Visible = False
+        Me.PictureBox1.BackColor = System.Drawing.Color.Orange
+        Me.PictureBox1.Location = New System.Drawing.Point(541, 18)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(50, 17)
+        Me.PictureBox1.TabIndex = 8
+        Me.PictureBox1.TabStop = False
+        '
+        'pbFavor
+        '
+        Me.pbFavor.BackColor = System.Drawing.Color.LightGreen
+        Me.pbFavor.Location = New System.Drawing.Point(387, 18)
+        Me.pbFavor.Name = "pbFavor"
+        Me.pbFavor.Size = New System.Drawing.Size(50, 17)
+        Me.pbFavor.TabIndex = 6
+        Me.pbFavor.TabStop = False
+        '
+        'pbSinRegistro
+        '
+        Me.pbSinRegistro.BackColor = System.Drawing.Color.Yellow
+        Me.pbSinRegistro.Location = New System.Drawing.Point(237, 19)
+        Me.pbSinRegistro.Name = "pbSinRegistro"
+        Me.pbSinRegistro.Size = New System.Drawing.Size(50, 17)
+        Me.pbSinRegistro.TabIndex = 4
+        Me.pbSinRegistro.TabStop = False
+        '
+        'pbFalta
+        '
+        Me.pbFalta.BackColor = System.Drawing.Color.Red
+        Me.pbFalta.Location = New System.Drawing.Point(106, 20)
+        Me.pbFalta.Name = "pbFalta"
+        Me.pbFalta.Size = New System.Drawing.Size(50, 17)
+        Me.pbFalta.TabIndex = 2
+        Me.pbFalta.TabStop = False
+        '
+        'tsMenu
+        '
+        Me.tsMenu.BackgroundImage = CType(resources.GetObject("tsMenu.BackgroundImage"), System.Drawing.Image)
+        Me.tsMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsbImprimir, Me.ToolStripSeparator1, Me.tsbIncidencias, Me.ToolStripSeparator2, Me.tslEmpleado})
+        Me.tsMenu.Location = New System.Drawing.Point(0, 0)
+        Me.tsMenu.Name = "tsMenu"
+        Me.tsMenu.Size = New System.Drawing.Size(1332, 25)
+        Me.tsMenu.TabIndex = 0
+        Me.tsMenu.Text = "ToolStrip1"
+        '
+        'tsbImprimir
+        '
+        Me.tsbImprimir.ForeColor = System.Drawing.Color.White
+        Me.tsbImprimir.Image = CType(resources.GetObject("tsbImprimir.Image"), System.Drawing.Image)
+        Me.tsbImprimir.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsbImprimir.Name = "tsbImprimir"
+        Me.tsbImprimir.Size = New System.Drawing.Size(73, 22)
+        Me.tsbImprimir.Text = "Imprimir"
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 25)
+        '
+        'tsbIncidencias
+        '
+        Me.tsbIncidencias.ForeColor = System.Drawing.Color.White
+        Me.tsbIncidencias.Image = CType(resources.GetObject("tsbIncidencias.Image"), System.Drawing.Image)
+        Me.tsbIncidencias.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsbIncidencias.Name = "tsbIncidencias"
+        Me.tsbIncidencias.Size = New System.Drawing.Size(86, 22)
+        Me.tsbIncidencias.Text = "Incidencias"
+        '
+        'ToolStripSeparator2
+        '
+        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 25)
+        '
+        'tslEmpleado
+        '
+        Me.tslEmpleado.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.tslEmpleado.ForeColor = System.Drawing.Color.White
+        Me.tslEmpleado.Name = "tslEmpleado"
+        Me.tslEmpleado.Size = New System.Drawing.Size(129, 22)
+        Me.tslEmpleado.Text = "ToolStripLabel1"
+        Me.tslEmpleado.Visible = False
         '
         'frmAsistencia
         '
@@ -544,8 +559,6 @@ Partial Class frmAsistencia
         Me.Name = "frmAsistencia"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Reporte de Asistencia"
-        Me.tsMenu.ResumeLayout(False)
-        Me.tsMenu.PerformLayout()
         Me.SplitContainer1.Panel1.ResumeLayout(False)
         Me.SplitContainer1.Panel2.ResumeLayout(False)
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -556,13 +569,15 @@ Partial Class frmAsistencia
         Me.Panel1.PerformLayout()
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
+        Me.Panel3.ResumeLayout(False)
+        CType(Me.fgJornada, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbFavor, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbSinRegistro, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbFalta, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel3.ResumeLayout(False)
-        CType(Me.fgJornada, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tsMenu.ResumeLayout(False)
+        Me.tsMenu.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -612,4 +627,6 @@ Partial Class frmAsistencia
     Friend WithEvents pdReporte As System.Drawing.Printing.PrintDocument
     Friend WithEvents lblFal As Label
     Friend WithEvents lblFaltas As Label
+    Friend WithEvents tsbIncidencias As ToolStripButton
+    Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
 End Class

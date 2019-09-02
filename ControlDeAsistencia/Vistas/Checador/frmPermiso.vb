@@ -299,6 +299,42 @@ Public Class frmPermiso
 
                 End If
 
+            Case "PAGO DE TIEMPO"
+
+                If txtHora.Text <> "" And txtSalida.Text <> "" Then
+
+                    strSql = "INSERT "
+                    strSql += "INTO "
+                    strSql += "incidencias "
+                    strSql += "(tipo, "
+                    strSql += "clave, "
+                    strSql += "fecha, "
+                    strSql += "observaciones, "
+                    strSql += "entrada, "
+                    strSql += "salida) "
+                    strSql += "VALUES "
+                    strSql += "('" & cmbConcepto.Text & "', "
+                    strSql += "'" & cmbEmpleado.SelectedValue & "', "
+                    strSql += "'" & Format(dtpFecha.Value, "yyyyMMdd") & "', "
+                    strSql += "'" & txtObservaciones.Text & "', "
+                    strSql += "'" & txtHora.Text & "', "
+                    strSql += "'" & txtSalida.Text & "')"
+
+                    cmdObj.CommandText = strSql
+
+                    Try
+                        cmdObj.ExecuteNonQuery()
+                        MessageBox.Show("Datos Guardados", "MENSAJE", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        cnObj.Close()
+                        Me.Close()
+                    Catch ex As Exception
+                        MessageBox.Show("Error al Guardar, " + ex.Message, "ERROR CRITICO", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    End Try
+
+                    cnObj.Close()
+
+                End If
+
         End Select
 
     End Sub
@@ -372,6 +408,26 @@ Public Class frmPermiso
         cnObj.Close()
 
     End Function
+
+    Private Sub cmbConcepto_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbConcepto.SelectedIndexChanged
+
+        If cmbConcepto.Text = "PAGO DE TIEMPO" Then
+
+            lblSalida.Visible = True
+            txtSalida.Visible = True
+
+            lblHora.Text = "Entrada"
+
+        Else
+
+            lblSalida.Visible = False
+            txtSalida.Visible = False
+
+            lblHora.Text = "Hora"
+
+        End If
+
+    End Sub
 
 #End Region
 

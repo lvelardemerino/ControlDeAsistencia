@@ -290,6 +290,12 @@
     <Compile Include="Vistas\Checador\Reportes\frmAsistencia.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Vistas\Checador\Reportes\frmIncidencias.Designer.vb">
+      <DependentUpon>frmIncidencias.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Checador\Reportes\frmIncidencias.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Vistas\Otros\frmCargandoPermisos.Designer.vb">
       <DependentUpon>frmCargandoPermisos.vb</DependentUpon>
     </Compile>
@@ -397,6 +403,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Checador\Reportes\frmAsistencia.resx">
       <DependentUpon>frmAsistencia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Checador\Reportes\frmIncidencias.resx">
+      <DependentUpon>frmIncidencias.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Otros\frmCargandoPermisos.resx">
       <DependentUpon>frmCargandoPermisos.vb</DependentUpon>

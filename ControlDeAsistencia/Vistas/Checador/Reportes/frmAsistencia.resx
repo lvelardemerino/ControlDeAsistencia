@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="fgJornada.StyleInfo" xml:space="preserve">
+    <value>Normal{Font:Microsoft Sans Serif, 8.25pt;}	Alternate{}	Fixed{BackColor:Control;ForeColor:ControlText;Border:Flat,1,ControlDark,Both;BackgroundImageLayout:Hide;}	Highlight{BackColor:Highlight;ForeColor:HighlightText;}	Focus{}	Editor{}	Search{BackColor:Highlight;ForeColor:HighlightText;}	Frozen{BackColor:Beige;}	NewRow{ForeColor:GrayText;}	EmptyArea{BackColor:AppWorkspace;Border:Flat,1,ControlDarkDark,Both;}	SelectedColumnHeader{}	SelectedRowHeader{}	GrandTotal{BackColor:Black;ForeColor:White;}	Subtotal0{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal1{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal2{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal3{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal4{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal5{BackColor:ControlDarkDark;ForeColor:White;}	FilterEditor{}	FirstCustomStyle{}	CustomStyle1{BackColor:Red;}	CustomStyle2{BackColor:Yellow;}	CustomStyle3{BackColor:OrangeRed;}	CustomStyle4{BackColor:LightGreen;}	CustomStyle5{BackColor:Orange;}	</value>
+  </data>
+  <metadata name="pdReporte.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>109, 17</value>
+  </metadata>
   <metadata name="tsMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
@@ -147,12 +153,33 @@
         LFN9sQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="fgJornada.StyleInfo" xml:space="preserve">
-    <value>Normal{Font:Microsoft Sans Serif, 8.25pt;}	Alternate{}	Fixed{BackColor:Control;ForeColor:ControlText;Border:Flat,1,ControlDark,Both;BackgroundImageLayout:Hide;}	Highlight{BackColor:Highlight;ForeColor:HighlightText;}	Focus{}	Editor{}	Search{BackColor:Highlight;ForeColor:HighlightText;}	Frozen{BackColor:Beige;}	NewRow{ForeColor:GrayText;}	EmptyArea{BackColor:AppWorkspace;Border:Flat,1,ControlDarkDark,Both;}	SelectedColumnHeader{}	SelectedRowHeader{}	GrandTotal{BackColor:Black;ForeColor:White;}	Subtotal0{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal1{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal2{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal3{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal4{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal5{BackColor:ControlDarkDark;ForeColor:White;}	FilterEditor{}	FirstCustomStyle{}	CustomStyle1{BackColor:Red;}	CustomStyle2{BackColor:Yellow;}	CustomStyle3{BackColor:OrangeRed;}	CustomStyle4{BackColor:LightGreen;}	CustomStyle5{BackColor:Orange;}	</value>
+  <data name="tsbIncidencias.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAT5SURBVFhH7ZdrTJNXGMfdBHdJTEyUZfs842XbJ7M5de6S
+        bJl4AWWGaVQUHXPBhXnJzLa4LW46VIShOEFU5CZ3uRUKLSAtt5bSC/R+422htJVSR0Gcuq3jv3POXj7s
+        K7yaLNmTPOnbvufyO+f5P+c5nfe//Wdsenp64dTU1AsAniX+FP/zkzEyYYTC7PqlTWe3yrQ2aceAI1dl
+        4b7WD3p2cb7A+sDExMuhEBaRdpF8F2GNrlrr9Lf4Jx5i5Nf7cAcmYBsJQusY+UtldU91Gpwjcp1d066z
+        ibr0jiyNzX3ENOyNnZycXMwPMTcj2//MDIDn7hTo553JR/9yX+gBeXcf3OgErAROojE+NDh92/gh5mYM
+        YNAvpRPfVqiRmX0VdZLb6NEaYXb5MER2hL6b8cC936GxuMMGpzeeH2JuxgNI6OCF5dXYuCUW738Yja3b
+        45GwPwnfnTqD68XlEEll0Fk5cP67UJsfE0C/zYX80kqcOpvOAD7YsBErX3kN6995D7Fx25GccgTKfrOw
+        AESEC9Sct5kC2EcCcPqCTAt069UmB4Fyo6JOjIKyKlzIuQa9fejxAdDYnz6Xgawreci7WQGbZxTKAQu8
+        479heGySwfnIs+AAGs7bRAFau1TYve8A1r71NrZsjcOSqCgWirj4HTiZmobL1wpgdHrIzriEBdByPjEF
+        oOmm0JnQ2TfAdoFueWLSZwxgT+InTAeiFjnkOlO43zksPIB7NASN2cl8OHgPLvKdaoGqv12pYSGSKbUQ
+        yXrDGptLMIBIrdPXSAHoxIcOH0PKseMsFFcLS5GTV4TGtk70Ge0YIAIccAyjTCIPk7bCAfTZPA3cnXGm
+        +rQLl3HgYDLb7hUrX8WyFSvxxpq17Hw4/OVXKLklQom4PawSEqDb5Gowcl70kPj3GR0wkecOVT8TZW5B
+        CX46n4mUo8exa+9+pKZfRLGoNaww2IQDUJrdIuvwKG5W1ePEydM483MWLubkQWWwMwj6Tqm3olIkRbtC
+        i4La5rCi3ywcQK/NLXJ4g6gnx+3HuxKwes06bNgUg8WLl2BTzDZE0+0//g1+OJsBiVyJq6X14S6NQTCA
+        CJV9pJ4qnvOPkxVq0EJWnZ6Vg3OZl7Bj915Eb44lqbiTHc3XSF3ILakVDoDWgj67V0LTzuEdI2e9hbnd
+        E2C1QW0ehLSzF5UNUlInbqGhpQM3qsXCAdCrmJbzGmka0lRL/uIoS0Uaigs515Fx6QqpBU0s9nIiTBUR
+        aU5xjXAArtHgVsudiQf04qEnOU7TcB85/TbHxrEUXLpsOVa9vpqV6IOfH0ZRZR2yi6qFAaDxl/YZCtUW
+        jp2CtODM3H56ieqbZT3sSP72x1R8eigFOxMSSRpmIbew4s8urfEjfpjZGwGYb3UOratqakvNrxa3ljRK
+        vC0K/R8mchOiJZn6P1oYgoLoorJeguYOJc7n5k/pLI53+TFmf4umnSkEEeJzY2NjLw2YzW+KZd1JRdWN
+        eTeqG3RVzbJJSZd6uldvZ7HvIRCt3RqcSMty6y3OVcFgcCHpP/fbMg/yNPEImhWhUGiR0+NZ2tHbv7mi
+        seX73NIacXZB+VB+Wd2jyzdKcSoju9ZqtS73+/1RtD3tzw8ljPEw84kvIP58IBB4ka6YaCLhellNulyh
+        jaHXcvqOtuO7PR4jE7AwEY/kV0snpf+gIog/8X9RFObJTjp7mzfvb7ejlHhfUW8rAAAAAElFTkSuQmCC
+</value>
   </data>
-  <metadata name="pdReporte.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>109, 17</value>
-  </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAyGkAAAEAIADEUwEAFgAAACgAAADIAAAA0gAAAAEAIAAAAAAAIEgBAAAAAAAAAAAAAAAAAAAA

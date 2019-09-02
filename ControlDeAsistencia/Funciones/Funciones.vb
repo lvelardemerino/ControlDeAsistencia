@@ -1,4 +1,5 @@
 ﻿Imports MySql.Data.MySqlClient
+Imports System.Math
 
 Module Funciones
 
@@ -707,6 +708,46 @@ Module Funciones
         cnObj.Close()
 
     End Sub
+
+    Public Function ConvierteNumeroHora(ByVal Numero As Integer) As String
+
+        Dim Valor As String = ""
+
+        Dim Hora, Minuto As Integer
+
+        Hora = Truncate(Abs(Numero) / 60)
+        Minuto = Abs(Numero) Mod 60
+
+        If Hora < 10 Then
+            Valor = "0" & CStr(Hora)
+        Else
+            Valor = CStr(Hora)
+        End If
+
+        If Minuto < 10 Then
+            Valor = Valor & ":0" & CStr(Minuto)
+        Else
+            Valor = Valor & ":" & CStr(Minuto)
+        End If
+
+        Return Valor
+
+    End Function
+
+    Public Function ConvierteHoraNumero(ByVal Hora As String) As Integer
+
+        Dim Valor As Integer = 0
+
+        Dim tempHora, tempMin As Integer
+
+        tempHora = Mid(Hora, 1, 2)
+        tempMin = Mid(Hora, 4, 5)
+
+        Valor = (tempHora * 60) + tempMin
+
+        Return Valor
+
+    End Function
 
 #End Region
 
