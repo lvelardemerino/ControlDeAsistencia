@@ -1454,7 +1454,10 @@ Public Class frmAsistencia
         e.Graphics.DrawString(" SALIDA", prFont, Brushes.Black, 735, Salto)
         e.Graphics.DrawString("TEMPRANO", prFont, Brushes.Black, 735, Salto + 10)
 
-        e.Graphics.DrawString("CONCEPTO", prFont, Brushes.Black, 820, Salto)
+        e.Graphics.DrawString("OTRO", prFont, Brushes.Black, 820, Salto)
+        e.Graphics.DrawString("TIEMPO", prFont, Brushes.Black, 820, Salto + 10)
+
+        e.Graphics.DrawString("CONCEPTO", prFont, Brushes.Black, 875, Salto)
 
         Salto += 30
 
@@ -1494,10 +1497,16 @@ Public Class frmAsistencia
             e.Graphics.DrawString(fgJornada.GetData(i, 11), prFont, Brushes.Black, 620, Salto)
 
             'Salida Tarde
-            e.Graphics.DrawString(fgJornada.GetData(i, 12), prFont, Brushes.Black, 670, Salto)
+            e.Graphics.DrawString(fgJornada.GetData(i, 12), prFont, Brushes.Black, 695, Salto)
 
             'Salida Temprano
-            e.Graphics.DrawString(fgJornada.GetData(i, 13), prFont, Brushes.Black, 720, Salto)
+            e.Graphics.DrawString(fgJornada.GetData(i, 13), prFont, Brushes.Black, 750, Salto)
+
+            'Otro Tiempo
+            e.Graphics.DrawString(fgJornada.GetData(i, 14), prFont, Brushes.Black, 770, Salto)
+
+            'Concepto
+            e.Graphics.DrawString(fgJornada.GetData(i, 15), prFont, Brushes.Black, 880, Salto)
 
             Salto += 14
 
