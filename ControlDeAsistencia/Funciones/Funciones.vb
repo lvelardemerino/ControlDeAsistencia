@@ -3,6 +3,24 @@ Imports System.Math
 
 Module Funciones
 
+    '*******************************************************************************************************************************************************************
+    '*                                                                                                                                                                 *
+    '*                          CREADO POR: ING. LUIS ALBERTO VELARDE MERINO.                                                                                          *
+    '*                                                                                                                                                                 *
+    '*                          ING. SISTEMAS COMPUTACIONALES                                                                                                          *
+    '*                                                                                                                                                                 *
+    '*                          CEDULA: 10907818                                                                                                                       *
+    '*                                                                                                                                                                 *
+    '*                          FECHA DE CREACION: 04/09/2019                                                                                                          *
+    '*                                                                                                                                                                 *
+    '*                          COPYRIGHT: GRACE & JOY S.A. DE C.V.                                                                                                    *
+    '*                                                                                                                                                                 *
+    '*                          DERECHOS INTELECTUALES: ING. LUIS ALBERTO VELARDE MERINO                                                                               *
+    '*                                                                                                                                                                 *
+    '*                          CONTACTO: lavsystem@outlook.com                                                                                                        *
+    '*                                                                                                                                                                 *
+    '*******************************************************************************************************************************************************************
+
 #Region "VARIABLES GLOBALES"
 
     Public intSucursal As Integer = 10

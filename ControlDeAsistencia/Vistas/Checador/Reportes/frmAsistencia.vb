@@ -4,6 +4,24 @@ Imports System.Math
 
 Public Class frmAsistencia
 
+    '*******************************************************************************************************************************************************************
+    '*                                                                                                                                                                 *
+    '*                          CREADO POR: ING. LUIS ALBERTO VELARDE MERINO.                                                                                          *
+    '*                                                                                                                                                                 *
+    '*                          ING. SISTEMAS COMPUTACIONALES                                                                                                          *
+    '*                                                                                                                                                                 *
+    '*                          CEDULA: 10907818                                                                                                                       *
+    '*                                                                                                                                                                 *
+    '*                          FECHA DE CREACION: 04/09/2019                                                                                                          *
+    '*                                                                                                                                                                 *
+    '*                          COPYRIGHT: GRACE & JOY S.A. DE C.V.                                                                                                    *
+    '*                                                                                                                                                                 *
+    '*                          DERECHOS INTELECTUALES: ING. LUIS ALBERTO VELARDE MERINO                                                                               *
+    '*                                                                                                                                                                 *
+    '*                          CONTACTO: lavsystem@outlook.com                                                                                                        *
+    '*                                                                                                                                                                 *
+    '*******************************************************************************************************************************************************************
+
 #Region "VARIABLES DE ENTORNO"
 
     Dim mes, anio, falta As Integer
@@ -130,6 +148,7 @@ Public Class frmAsistencia
 
         Dim frmIncidencias As New frmIncidencias()
         frmIncidencias.fecha = dtpFechaIni.Value
+        frmIncidencias.Clave = cmbEmpleado.SelectedValue
         frmIncidencias.ShowDialog()
 
     End Sub
@@ -841,6 +860,22 @@ Public Class frmAsistencia
 
     Private Sub Tiempos()
 
+        '*******************************************************************************************************************************************************************
+        '*                                                                                                                                                                 *
+        '*                          FUNCION EN LA QUE SE GENERAN LOS MOVIMIENTOS DE LAS INCIDENCIAS, SE GENERAN LOS TIEMPOS EN CONTRA,                                     *
+        '*                                                                                                                                                                 *
+        '*                          LAS FALTAS, LOS RETARDOS DE COMIDA, RETARDOS DE ENTRADA, SALIDAS TEMPRANAS, SALIDAS TARDES,                                            *
+        '*                                                                                                                                                                 *
+        '*                          NUMERO DE RETARDOS, PERMISOS PERSONALES, PERMISOS, TIEMPO TOTAL A FAVOR, TIEMPO TOTAL EN CONTRA,                                       *
+        '*                                                                                                                                                                 *
+        '*                          EL TIEMPO QUE GENERO EL COLABORADOR DEL MES ANTERIOR, ASI COMO TODOS LOS CALCULOS PARA GENERAR                                         *
+        '*                                                                                                                                                                 *
+        '*                          EL TOTAL DE TIEMPO DEL MES DEL COLABORADOR, SE COLOCAN LOS CONCEPTOS DE LAS INCIDENCIAS Y SE                                           *
+        '*                                                                                                                                                                 *
+        '*                          GENERA EL REPORTE IMPRESO PARA SU REVISION Y POSTERIOR FIRMA DE ACUERDO DEL COLABORADOR.                                               *
+        '*                                                                                                                                                                 *
+        '*******************************************************************************************************************************************************************
+
         Dim difTiempoFavor, difTiempoContra As Integer
 
         Dim cnObj As New MySqlConnection
@@ -853,13 +888,16 @@ Public Class frmAsistencia
 
         Dim strSql As String
 
+        'Recorremos el grid para revisar las incidencias
         For i As Integer = 1 To fgJornada.Rows.Count - 1
 
             difTiempoFavor = 0
             difTiempoContra = 0
 
+            'Verifico si el dia no sea domingo
             If UCase(Format(fgJornada.GetData(i, 1), "dddd")) <> "DOMINGO" Then
 
+                'Seleccionamos las incidencias del dia recorrido
                 strSql = "SELECT "
                 strSql += "tipo, "
                 strSql += "entrada, "
@@ -881,10 +919,15 @@ Public Class frmAsistencia
 
                         Dim TiempoTemp As Integer = 0
 
+                        'Seleccionamos el tipo de incidencia
                         Select Case rdrObj.Item("tipo")
 
+
+                            'Si la incidencia es de entrada temprano
                             Case "ENTRADA TEMPRANO"
 
+                                'revisamos si tiene una hora de entrada, si no tiene hora de entrada, 
+                                'se genera el tiempo a partir de la hora de entrada de la jornada y la hora de entrada
                                 If rdrObj.Item("entrada") Is DBNull.Value Then
                                     TiempoTemp = DateDiff("n", fgJornada.GetData(i, 4), fgJornada.GetData(i, 3))
 
@@ -897,8 +940,22 @@ Public Class frmAsistencia
                                     End If
 
                                     fgJornada.SetData(i, 11, ConvierteNumeroHora(TiempoTemp))
-
                                     difTiempoFavor += TiempoTemp
+
+                                    'Revisamos si se tiene otro concepto anterior para este dia
+                                    If fgJornada.GetData(i, 15) <> "" Then
+
+                                        Dim tempConcepto As String
+
+                                        tempConcepto = fgJornada.GetData(i, 15)
+                                        tempConcepto = tempConcepto & ", " & "ENTRADA TEMPRANO"
+                                        fgJornada.SetData(i, 15, tempConcepto)
+
+                                    Else
+
+                                        fgJornada.SetData(i, 15, "ENTRADA TEMPRANO")
+
+                                    End If
 
                                 Else
 
@@ -917,8 +974,21 @@ Public Class frmAsistencia
                                         End If
 
                                         fgJornada.SetData(i, 11, ConvierteNumeroHora(TiempoTemp))
-
                                         difTiempoFavor += TiempoTemp
+
+                                        If fgJornada.GetData(i, 15) <> "" Then
+
+                                            Dim tempConcepto As String
+
+                                            tempConcepto = fgJornada.GetData(i, 15)
+                                            tempConcepto = tempConcepto & ", " & "ENTRADA TEMPRANO"
+                                            fgJornada.SetData(i, 15, tempConcepto)
+
+                                        Else
+
+                                            fgJornada.SetData(i, 15, "ENTRADA TEMPRANO")
+
+                                        End If
 
                                     End If
 
@@ -938,8 +1008,21 @@ Public Class frmAsistencia
                                     End If
 
                                     fgJornada.SetData(i, 12, ConvierteNumeroHora(TiempoTemp))
-
                                     difTiempoFavor += TiempoTemp
+
+                                    If fgJornada.GetData(i, 15) <> "" Then
+
+                                        Dim tempConcepto As String
+
+                                        tempConcepto = fgJornada.GetData(i, 15)
+                                        tempConcepto = tempConcepto & ", " & "SALIDA TARDE"
+                                        fgJornada.SetData(i, 15, tempConcepto)
+
+                                    Else
+
+                                        fgJornada.SetData(i, 15, "SALIDA TARDE")
+
+                                    End If
 
                                 Else
 
@@ -958,8 +1041,21 @@ Public Class frmAsistencia
                                         End If
 
                                         fgJornada.SetData(i, 12, ConvierteNumeroHora(TiempoTemp))
-
                                         difTiempoFavor += TiempoTemp
+
+                                        If fgJornada.GetData(i, 15) <> "" Then
+
+                                            Dim tempConcepto As String
+
+                                            tempConcepto = fgJornada.GetData(i, 15)
+                                            tempConcepto = tempConcepto & ", " & "SALIDA TARDE"
+                                            fgJornada.SetData(i, 15, tempConcepto)
+
+                                        Else
+
+                                            fgJornada.SetData(i, 15, "SALIDA TARDE")
+
+                                        End If
 
                                     End If
 
@@ -968,6 +1064,7 @@ Public Class frmAsistencia
                             Case "ENTRADA TARDE"
 
                                 If rdrObj.Item("entrada") Is DBNull.Value Then
+
                                     TiempoTemp = DateDiff("n", fgJornada.GetData(i, 3), fgJornada.GetData(i, 4))
 
                                     Dim crRegistro As New C1.Win.C1FlexGrid.CellRange
@@ -979,8 +1076,28 @@ Public Class frmAsistencia
                                     End If
 
                                     fgJornada.SetData(i, 10, ConvierteNumeroHora(TiempoTemp))
-
                                     difTiempoContra += TiempoTemp
+
+                                    'Se revisa si tomo su tiempo de comida, si no se tomo se genera tiempo a favor
+                                    If fgJornada.GetData(i, 5) = "" And fgJornada.GetData(i, 6) = "" Then
+
+                                        difTiempoFavor += 60
+
+                                    End If
+
+                                    If fgJornada.GetData(i, 15) <> "" Then
+
+                                        Dim tempConcepto As String
+
+                                        tempConcepto = fgJornada.GetData(i, 15)
+                                        tempConcepto = tempConcepto & ", " & "ENTRADA TARDE"
+                                        fgJornada.SetData(i, 15, tempConcepto)
+
+                                    Else
+
+                                        fgJornada.SetData(i, 15, "ENTRADA TARDE")
+
+                                    End If
 
                                 Else
 
@@ -1000,8 +1117,28 @@ Public Class frmAsistencia
                                         End If
 
                                         fgJornada.SetData(i, 10, ConvierteNumeroHora(TiempoTemp))
-                                        fgJornada.SetData(i, 15, "ENTRADA TARDE")
                                         difTiempoContra += TiempoTemp
+
+                                        If fgJornada.GetData(i, 15) <> "" Then
+
+                                            Dim tempConcepto As String
+
+                                            tempConcepto = fgJornada.GetData(i, 15)
+                                            tempConcepto = tempConcepto & ", " & "ENTRADA TARDE"
+                                            fgJornada.SetData(i, 15, tempConcepto)
+
+                                        Else
+
+                                            fgJornada.SetData(i, 15, "ENTRADA TARDE")
+
+                                        End If
+
+                                        'Se revisa si tomo su tiempo de comida, si no se tomo se genera tiempo a favor
+                                        If fgJornada.GetData(i, 5) = "" And fgJornada.GetData(i, 6) = "" Then
+
+                                            difTiempoFavor += 60
+
+                                        End If
 
                                     End If
 
@@ -1021,8 +1158,28 @@ Public Class frmAsistencia
                                     End If
 
                                     fgJornada.SetData(i, 13, ConvierteNumeroHora(TiempoTemp))
-
                                     difTiempoContra += TiempoTemp
+
+                                    'Se revisa si tomo su tiempo de comida, si no se tomo se genera tiempo a favor
+                                    If fgJornada.GetData(i, 5) = "" And fgJornada.GetData(i, 6) = "" Then
+
+                                        difTiempoFavor += 60
+
+                                    End If
+
+                                    If fgJornada.GetData(i, 15) <> "" Then
+
+                                        Dim tempConcepto As String
+
+                                        tempConcepto = fgJornada.GetData(i, 15)
+                                        tempConcepto = tempConcepto & ", " & "SALIDA TEMPRANO"
+                                        fgJornada.SetData(i, 15, tempConcepto)
+
+                                    Else
+
+                                        fgJornada.SetData(i, 15, "SALIDA TEMPRANO")
+
+                                    End If
 
                                 Else
 
@@ -1041,8 +1198,28 @@ Public Class frmAsistencia
                                         End If
 
                                         fgJornada.SetData(i, 13, ConvierteNumeroHora(TiempoTemp))
-
                                         difTiempoContra += TiempoTemp
+
+                                        'Se revisa si tomo su tiempo de comida, si no se tomo se genera tiempo a favor
+                                        If fgJornada.GetData(i, 5) = "" And fgJornada.GetData(i, 6) = "" Then
+
+                                            difTiempoFavor += 60
+
+                                        End If
+
+                                        If fgJornada.GetData(i, 15) <> "" Then
+
+                                            Dim tempConcepto As String
+
+                                            tempConcepto = fgJornada.GetData(i, 15)
+                                            tempConcepto = tempConcepto & ", " & "SALIDA TEMPRANO"
+                                            fgJornada.SetData(i, 15, tempConcepto)
+
+                                        Else
+
+                                            fgJornada.SetData(i, 15, "SALIDA TEMPRANO")
+
+                                        End If
 
                                     End If
 
@@ -1072,9 +1249,23 @@ Public Class frmAsistencia
                                     crRegistro.Style = fgJornada.Styles("CustomStyle1")
 
                                     fgJornada.SetData(i, 14, ConvierteNumeroHora(TiempoTemp))
-                                    fgJornada.SetData(i, 15, "FALTA AUTORIZADA")
+
 
                                     difTiempoContra += TiempoTemp
+
+                                    If fgJornada.GetData(i, 15) <> "" Then
+
+                                        Dim tempConcepto As String
+
+                                        tempConcepto = fgJornada.GetData(i, 15)
+                                        tempConcepto = tempConcepto & ", " & "FALTA AUTORIZADA"
+                                        fgJornada.SetData(i, 15, tempConcepto)
+
+                                    Else
+
+                                        fgJornada.SetData(i, 15, "FALTA AUTORIZADA")
+
+                                    End If
 
                                 End If
 
@@ -1090,6 +1281,19 @@ Public Class frmAsistencia
                                     fgJornada.SetData(i, 14, "- " & ConvierteNumeroHora(TiempoTemp))
 
                                     difTiempoContra += TiempoTemp
+
+                                    If fgJornada.GetData(i, 15) <> "" Then
+
+                                        Dim tempConcepto As String
+
+                                        tempConcepto = fgJornada.GetData(i, 15)
+                                        tempConcepto = tempConcepto & ", " & "PERMISO PERSONAL"
+                                        fgJornada.SetData(i, 15, tempConcepto)
+                                    Else
+
+                                        fgJornada.SetData(i, 15, "PERMISO PERSONAL")
+
+                                    End If
 
                                 End If
 
@@ -1110,11 +1314,35 @@ Public Class frmAsistencia
                                 crRegistro.Style = fgJornada.Styles("CustomStyle4")
                                 fgJornada.SetData(i, 14, ConvierteNumeroHora(TiempoTemp))
 
-                                fgJornada.SetData(i, 15, "PAGO DE TIEMPO")
+                                If fgJornada.GetData(i, 15) <> "" Then
+
+                                    Dim tempConcepto As String
+
+                                    tempConcepto = fgJornada.GetData(i, 15)
+                                    tempConcepto = tempConcepto & ", " & "PAGO DE TIEMPO"
+                                    fgJornada.SetData(i, 15, tempConcepto)
+
+                                Else
+
+                                    fgJornada.SetData(i, 15, "PAGO DE TIEMPO")
+
+                                End If
 
                             Case "CAMBIO DESCANSO"
 
+                                If fgJornada.GetData(i, 15) <> "" Then
 
+                                    Dim tempConcepto As String
+
+                                    tempConcepto = fgJornada.GetData(i, 15)
+                                    tempConcepto = tempConcepto & ", " & "CAMBIO DESCANSO"
+                                    fgJornada.SetData(i, 15, tempConcepto)
+
+                                Else
+
+                                    fgJornada.SetData(i, 15, "CAMBIO DESCANSO")
+
+                                End If
 
                             Case Else
 
@@ -1246,7 +1474,7 @@ Public Class frmAsistencia
         End If
 
         If numRetComida > 0 Then
-            lblRetardoComida.Text = ConvierteNumeroHora(numRetComida)
+            lblRetardoComida.Text = numRetComida
             lblRetardoComida.Visible = True
         Else
             lblRetardoComida.Text = ""

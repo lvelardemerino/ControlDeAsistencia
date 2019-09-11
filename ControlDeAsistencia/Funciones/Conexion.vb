@@ -2,15 +2,33 @@
 
 Module Conexion
 
+    '*******************************************************************************************************************************************************************
+    '*                                                                                                                                                                 *
+    '*                          CREADO POR: ING. LUIS ALBERTO VELARDE MERINO.                                                                                          *
+    '*                                                                                                                                                                 *
+    '*                          ING. SISTEMAS COMPUTACIONALES                                                                                                          *
+    '*                                                                                                                                                                 *
+    '*                          CEDULA: 10907818                                                                                                                       *
+    '*                                                                                                                                                                 *
+    '*                          FECHA DE CREACION: 04/09/2019                                                                                                          *
+    '*                                                                                                                                                                 *
+    '*                          COPYRIGHT: GRACE & JOY S.A. DE C.V.                                                                                                    *
+    '*                                                                                                                                                                 *
+    '*                          DERECHOS INTELECTUALES: ING. LUIS ALBERTO VELARDE MERINO                                                                               *
+    '*                                                                                                                                                                 *
+    '*                          CONTACTO: lavsystem@outlook.com                                                                                                        *
+    '*                                                                                                                                                                 *
+    '*******************************************************************************************************************************************************************
+
     Public Function conectar() As MySqlConnection
 
         Dim cn As New MySqlConnection
 
         ' Base Local
-        cn.ConnectionString = "Server=192.168.2.248;DataBase=checador;User Id=sistemas;Password=s1st3m@s2017"
+        'cn.ConnectionString = "Server=192.168.2.248;DataBase=checador;User Id=sistemas;Password=s1st3m@s2017"
 
         'Base Pruebas
-        'cn.ConnectionString = "Server=LocalHost;DataBase=checador;User Id=sistemas;Password=s1st3m@s2017"
+        cn.ConnectionString = "Server=LocalHost;DataBase=checador;User Id=sistemas;Password=s1st3m@s2017"
 
         Try
 
